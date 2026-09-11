@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<link rel="stylesheet" href="refinements.css?v=6">
+<script src="motion.js?v=4" defer></script>
 </head>
 <body>
 <x-dc>
@@ -31,14 +33,19 @@
 </style>
 </helmet>
 
-<div style="position:relative; overflow-x:hidden; background:#08080a;">
+<div class="site-shell" style="position:relative; background:#08080a;">
 
   <div aria-hidden="true" style="position:fixed; inset:-15%; z-index:60; pointer-events:none; opacity:0.16; mix-blend-mode:overlay; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E&quot;); animation:grainShift 0.9s steps(3) infinite;"></div>
   <div aria-hidden="true" style="position:fixed; inset:0; z-index:59; pointer-events:none; opacity:0.35; background:radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.07) 0%, rgba(0,0,0,0) 55%), radial-gradient(100% 60% at 50% 100%, rgba(255,22,32,0.10) 0%, rgba(0,0,0,0) 60%);"></div>
 
-  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px clamp(16px,4vw,56px); background:rgba(8,8,10,0.88); backdrop-filter:blur(8px); border-bottom:1px solid rgba(255,255,255,0.10);">
-    <a href="#top" style="display:block; flex:0 0 auto;"><img src="assets/logo.png" alt="Bayley Currey" style="display:block; height:clamp(30px,4.4vw,44px); width:auto;"></a>
-    <nav style="display:flex; flex-wrap:wrap; justify-content:flex-end; align-items:center; gap:clamp(12px,1.8vw,26px); font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase;">
+  <header class="site-header" style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px clamp(16px,4vw,56px); background:rgba(8,8,10,0.88); backdrop-filter:blur(8px); border-bottom:1px solid rgba(255,255,255,0.10);">
+    <a class="site-logo" href="#top" style="display:block; flex:0 0 auto;"><img src="assets/logo.png" alt="Bayley Currey" style="display:block; height:clamp(30px,4.4vw,44px); width:auto;"></a>
+    <a class="sponsor-quick-link" href="sponsorship.html">Partner <span aria-hidden="true">→</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-toggle-label">Menu</span>
+      <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation" style="display:flex; flex-wrap:wrap; justify-content:flex-end; align-items:center; gap:clamp(12px,1.8vw,26px); font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase;">
       <a href="#about" style="color:#f4f4f2">About</a>
       <a href="#news" style="color:#f4f4f2">News</a>
       <a href="#career" style="color:#f4f4f2">Career</a>
@@ -197,31 +204,36 @@
     </div>
   </section>
 
-  <section id="career" style="padding:clamp(48px,6vw,96px) clamp(16px,4vw,56px); border-bottom:1px solid rgba(255,255,255,0.10);">
-    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:clamp(28px,4vw,64px);">
+  <section id="career" class="career-section" style="padding:clamp(48px,6vw,96px) clamp(16px,4vw,56px); border-bottom:1px solid rgba(255,255,255,0.10);">
+    <div class="career-layout" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:clamp(28px,4vw,64px);">
       <div style="min-width:0;">
         <h2 style="margin:0; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(30px,3.6vw,48px); line-height:1; text-transform:uppercase;">Career Highlights</h2>
-        <div style="margin-top:30px; display:grid; gap:1px; background:rgba(255,255,255,0.10);">
-          <div style="background:#08080a; padding:22px 0 22px 0; display:grid; grid-template-columns:auto 1fr; gap:20px; align-items:start;">
-            <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:26px; line-height:1; color:#ff1620;">2025</div>
-            <div style="font-size:15px; line-height:1.6; color:rgba(244,244,242,0.86);">Captured first career Stage Win at Bristol Motor Speedway, proving he can lead the pack on NASCAR’s toughest short track.</div>
-          </div>
-          <div style="background:#08080a; padding:22px 0; display:grid; grid-template-columns:auto 1fr; gap:20px; align-items:start;">
-            <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:26px; line-height:1; color:#ff1620;">2023</div>
-            <div style="font-size:15px; line-height:1.6; color:rgba(244,244,242,0.86);">Drove from 31st to 4th at Atlanta Motor Speedway, securing a career-best finish through pure racecraft — and followed it up with another P4 there in 2025.</div>
-          </div>
-          <div style="background:#08080a; padding:22px 0; display:grid; grid-template-columns:auto 1fr; gap:20px; align-items:start;">
-            <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:26px; line-height:1; color:#ff1620;">OREI</div>
-            <div style="font-size:15px; line-height:1.6; color:rgba(244,244,242,0.86);">Delivered a massive 7th place finish in the O&rsquo;Reilly Auto Parts Series at Phoenix Raceway driving for an underfunded underdog team.</div>
-          </div>
-          <div style="background:#08080a; padding:22px 0; display:grid; grid-template-columns:auto 1fr; gap:20px; align-items:start;">
-            <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:26px; line-height:1; color:#ff1620;">ALL</div>
-            <div style="font-size:15px; line-height:1.6; color:rgba(244,244,242,0.86);">Proven speed on every track type with Top 10s at Phoenix (Short Track), Atlanta (Superspeedway), Kansas (Intermediate), and New Hampshire (Flat Oval).</div>
-          </div>
-          <div style="background:#08080a; padding:22px 0; display:grid; grid-template-columns:auto 1fr; gap:20px; align-items:start;">
-            <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:26px; line-height:1; color:#ff1620;">2017</div>
-            <div style="font-size:15px; line-height:1.6; color:rgba(244,244,242,0.86);">Earned a Top 10 finish in his second-ever Truck Series start at Phoenix, the season he debuted at Martinsville.</div>
-          </div>
+        <div class="career-highlight-list">
+          <article class="career-card career-card-featured">
+            <div class="career-card-top"><span class="career-year">2025</span><span class="career-category">Stage winner</span></div>
+            <h3>Led the field at Bristol</h3>
+            <p>Captured his first career stage win at one of NASCAR’s toughest short tracks.</p>
+          </article>
+          <article class="career-card">
+            <div class="career-card-top"><span class="career-year">2023</span><span class="career-category">Career-best finish</span></div>
+            <h3>31st to fourth at Atlanta</h3>
+            <p>Charged through the field for a career-best finish, then returned to Atlanta and finished fourth again in 2025.</p>
+          </article>
+          <article class="career-card">
+            <div class="career-card-top"><span class="career-year">2021</span><span class="career-category">Breakthrough run</span></div>
+            <h3>Seventh at Phoenix</h3>
+            <p>Delivered an underdog team a massive seventh-place finish in the O&rsquo;Reilly Auto Parts Series.</p>
+          </article>
+          <article class="career-card">
+            <div class="career-card-top"><span class="career-year">4 types</span><span class="career-category">Track versatility</span></div>
+            <h3>Speed everywhere</h3>
+            <p>Top tens on a short track, superspeedway, intermediate oval, and flat oval.</p>
+          </article>
+          <article class="career-card">
+            <div class="career-card-top"><span class="career-year">2017</span><span class="career-category">Truck Series</span></div>
+            <h3>Top ten in start No. 2</h3>
+            <p>Finished inside the top ten at Phoenix in the same season he made his NASCAR debut at Martinsville.</p>
+          </article>
         </div>
       </div>
       <div style="min-width:0;">
@@ -264,72 +276,89 @@
     </div>
   </section>
 
-  <section id="timeline" style="padding:clamp(48px,6vw,96px) clamp(16px,4vw,56px); border-bottom:1px solid rgba(255,255,255,0.10);">
-    <div style="max-width:1200px; margin:0 auto;">
-      <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;">
-        <h2 style="margin:0; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(30px,3.6vw,48px); line-height:1; text-transform:uppercase;">The Road Here</h2>
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#ff1620;">2009 — 2026</span>
-      </div>
-      <div aria-hidden="true" style="width:min(420px,100%); height:3px; background:#ff1620; margin:24px 0 0;"></div>
-      <div style="margin-top:30px;">
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#ff1620;">2009–2011</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:rgba(244,244,242,0.86);">Start racing legends cars, won 3 state championships, top 3 in national points all three years</div>
-          <img src="assets/legends.jpg" alt="Legends car victory lane" style="flex:0 0 auto; width:clamp(180px,20vw,240px); height:130px; object-fit:cover; border:1px solid rgba(255,255,255,0.14);">
-        </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#ff1620;">2012–2013</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:rgba(244,244,242,0.86);">Start racing modifieds, first time racing full-size car, won Central Texas Speedway points championship</div>
-          <img src="assets/modified-2012.jpg" alt="Modified victory lane, Houston Motorsports Park" style="flex:0 0 auto; width:clamp(180px,20vw,240px); height:130px; object-fit:cover; border:1px solid rgba(255,255,255,0.14);">
-        </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#ff1620;">2014–2017</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:rgba(244,244,242,0.86);">Start racing late models, won viper series championship at South Alabama Speedway, won Central Texas Speedway points championship twice</div>
-          <img src="assets/viper-champion.jpg" alt="2014 Viper Series champion, South Alabama Speedway" style="flex:0 0 auto; width:clamp(180px,20vw,240px); height:130px; object-fit:cover; border:1px solid rgba(255,255,255,0.14);">
-        </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#ff1620;">2017</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:rgba(244,244,242,0.86);">Made first Nascar National series start in the truck series at Martinsville, first truck series top 10 at Phoenix Raceway</div>
-          <img src="assets/first-nascar-start.jpg" alt="First NASCAR start, Truck Series" style="flex:0 0 auto; width:clamp(180px,20vw,240px); height:130px; object-fit:cover; border:1px solid rgba(255,255,255,0.14);">
-        </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#ff1620;">2018</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:rgba(244,244,242,0.86);">Made first O’Reilly Auto Parts Series start at Texas Motor Speedway, ran a lot of races in trucks and the O’Reilly Auto Parts Series (not a lot happened, gained a lot of experience)</div>
-          <img src="assets/first-xfinity-start.jpg" alt="Chasco No. 8 at Texas Motor Speedway" style="flex:0 0 auto; width:clamp(180px,20vw,240px); height:130px; object-fit:cover; border:1px solid rgba(255,255,255,0.14);">
-        </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#ff1620;">2019</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:rgba(244,244,242,0.86);">First Cup series start in march 2019, ran a lot of O’Reilly Auto Parts Series races, ran a few truck races had a 6th place finish at Michigan</div>
-          <img src="assets/first-cup-start.jpg" alt="First Cup Series start, No. 52" style="flex:0 0 auto; width:clamp(180px,20vw,240px); height:130px; object-fit:cover; border:1px solid rgba(255,255,255,0.14);">
-        </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#ff1620;">2021</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:rgba(244,244,242,0.86);">Ran all but 4-5 O’Reilly Auto Parts Series races, first series top 10 (7th at Phoenix) ran first races for Johnny Davis Motorsports</div>
-          <img src="assets/xfinity-ksdt.jpg" alt="Ghost No. 4 at Phoenix Raceway" style="flex:0 0 auto; width:clamp(180px,20vw,240px); height:130px; object-fit:cover; border:1px solid rgba(255,255,255,0.14);">
-        </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#ff1620;">2022</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:rgba(244,244,242,0.86);">First time ever having a contract and set to run the full schedule</div>
-          <img src="assets/cota-chasco.jpg" alt="Chasco No. 4 at Circuit of the Americas" style="flex:0 0 auto; width:clamp(180px,20vw,240px); height:130px; object-fit:cover; border:1px solid rgba(255,255,255,0.14);">
-        </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#ff1620;">2023</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:rgba(244,244,242,0.86);">Joins Niece Motorsports for 11 races, with 3 top fives, with a best finish of 4th at Atlanta</div>
-          <img src="assets/bristol-44.jpg" alt="No. 44 at Bristol Motor Speedway" style="flex:0 0 auto; width:clamp(180px,20vw,240px); height:130px; object-fit:cover; border:1px solid rgba(255,255,255,0.14);">
-        </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#ff1620;">2024</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:rgba(244,244,242,0.86);">Signed by Niece Motorsports to drive the No. 41 full time for the 2024 season</div>
-          <img src="assets/truck-41.jpg" alt="No. 41 Silverado" style="flex:0 0 auto; width:clamp(180px,20vw,240px); height:130px; object-fit:cover; border:1px solid rgba(255,255,255,0.14);">
-        </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10);">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#ff1620;">2025</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:rgba(244,244,242,0.86);">Partial Truck Series campaign with two top-tens, a first career stage win at Bristol and another fourth-place finish at Atlanta</div>
-        </div>
-        <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(16px,3vw,36px); padding:24px 0; border-top:1px solid rgba(255,255,255,0.10); border-bottom:1px solid rgba(255,255,255,0.10); background:#0b0b0e;">
-          <div style="flex:0 0 110px; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(20px,2.2vw,28px); line-height:1.05; color:#fff;">2026</div>
-          <div style="flex:1 1 260px; min-width:0; font-size:clamp(15px,1.2vw,17px); line-height:1.6; color:#fff;">Joins TRICON Garage as Truck Chief on the championship-contending No. 1 Tundra, and returns to the seat in the No. 5 at Bristol and Charlotte</div>
-        </div>
+  <section id="timeline" class="journey">
+    <div class="journey-layout">
+      <aside class="journey-intro">
+        <p class="journey-kicker">The road here / 2009–2026</p>
+        <h2>Built one race<br><span>at a time.</span></h2>
+        <p>From Texas short tracks to NASCAR’s biggest stages. The moments that shaped Bayley’s drive.</p>
+        <nav class="chapter-nav" aria-label="Career chapters">
+          <a href="#roots">01 / Texas roots</a>
+<a href="#national">02 / National stage</a>
+<a href="#next">03 / Building momentum</a>
+        </nav>
+      </aside>
+      <div class="journey-story">
+        <div class="journey-track" aria-hidden="true"><span></span></div>
+        <section class="journey-chapter" id="roots" aria-labelledby="roots-title">
+          <h3 id="roots-title" class="chapter-heading">01 / Texas roots</h3>
+          <article class="milestone">
+            <div class="milestone-year">2009–2011</div>
+            <div class="milestone-body"><h4>The Texas foundation</h4><p>Start racing legends cars, won 3 state championships, top 3 in national points all three years</p>
+            <figure><img src="assets/legends.jpg" alt="Legends car victory lane" loading="lazy" decoding="async"></figure></div>
+          </article>
+<article class="milestone">
+            <div class="milestone-year">2012–2013</div>
+            <div class="milestone-body"><h4>Moving up to modifieds</h4><p>Start racing modifieds, first time racing full-size car, won Central Texas Speedway points championship</p>
+            <figure><img src="assets/modified-2012.jpg" alt="Modified victory lane, Houston Motorsports Park" loading="lazy" decoding="async"></figure></div>
+          </article>
+<article class="milestone">
+            <div class="milestone-year">2014–2017</div>
+            <div class="milestone-body"><h4>Championship years</h4><p>Start racing late models, won viper series championship at South Alabama Speedway, won Central Texas Speedway points championship twice</p>
+            <figure><img src="assets/viper-champion.jpg" alt="2014 Viper Series champion, South Alabama Speedway" loading="lazy" decoding="async"></figure></div>
+          </article>
+        </section>
+<section class="journey-chapter" id="national" aria-labelledby="national-title">
+          <h3 id="national-title" class="chapter-heading">02 / National stage</h3>
+          <article class="milestone">
+            <div class="milestone-year">2017</div>
+            <div class="milestone-body"><h4>The NASCAR debut</h4><p>Made first Nascar National series start in the truck series at Martinsville, first truck series top 10 at Phoenix Raceway</p>
+            <figure><img src="assets/first-nascar-start.jpg" alt="First NASCAR start, Truck Series" loading="lazy" decoding="async"></figure></div>
+          </article>
+<article class="milestone">
+            <div class="milestone-year">2018</div>
+            <div class="milestone-body"><h4>A new national stage</h4><p>Made first O’Reilly Auto Parts Series start at Texas Motor Speedway, ran a lot of races in trucks and the O’Reilly Auto Parts Series (not a lot happened, gained a lot of experience)</p>
+            <figure><img src="assets/first-xfinity-start.jpg" alt="Chasco No. 8 at Texas Motor Speedway" loading="lazy" decoding="async"></figure></div>
+          </article>
+<article class="milestone">
+            <div class="milestone-year">2019</div>
+            <div class="milestone-body"><h4>Reaching the Cup Series</h4><p>First Cup series start in march 2019, ran a lot of O’Reilly Auto Parts Series races, ran a few truck races had a 6th place finish at Michigan</p>
+            <figure><img src="assets/first-cup-start.jpg" alt="First Cup Series start, No. 52" loading="lazy" decoding="async"></figure></div>
+          </article>
+<article class="milestone">
+            <div class="milestone-year">2021</div>
+            <div class="milestone-body"><h4>Finding a home</h4><p>Ran all but 4-5 O’Reilly Auto Parts Series races, first series top 10 (7th at Phoenix) ran first races for Johnny Davis Motorsports</p>
+            <figure><img src="assets/xfinity-ksdt.jpg" alt="Ghost No. 4 at Phoenix Raceway" loading="lazy" decoding="async"></figure></div>
+          </article>
+<article class="milestone">
+            <div class="milestone-year">2022</div>
+            <div class="milestone-body"><h4>A full-season commitment</h4><p>First time ever having a contract and set to run the full schedule</p>
+            <figure><img src="assets/cota-chasco.jpg" alt="Chasco No. 4 at Circuit of the Americas" loading="lazy" decoding="async"></figure></div>
+          </article>
+        </section>
+<section class="journey-chapter" id="next" aria-labelledby="next-title">
+          <h3 id="next-title" class="chapter-heading">03 / Building momentum</h3>
+          <article class="milestone">
+            <div class="milestone-year">2023</div>
+            <div class="milestone-body"><h4>Making every start count</h4><p>Joins Niece Motorsports for 11 races, with 3 top fives, with a best finish of 4th at Atlanta</p>
+            <figure><img src="assets/bristol-44.jpg" alt="No. 44 at Bristol Motor Speedway" loading="lazy" decoding="async"></figure></div>
+          </article>
+<article class="milestone">
+            <div class="milestone-year">2024</div>
+            <div class="milestone-body"><h4>Full time in the No. 41</h4><p>Signed by Niece Motorsports to drive the No. 41 full time for the 2024 season</p>
+            <figure><img src="assets/truck-41.jpg" alt="No. 41 Silverado" loading="lazy" decoding="async"></figure></div>
+          </article>
+<article class="milestone">
+            <div class="milestone-year">2025</div>
+            <div class="milestone-body"><h4>A breakthrough at Bristol</h4><p>Partial Truck Series campaign with two top-tens, a first career stage win at Bristol and another fourth-place finish at Atlanta</p>
+            </div>
+          </article>
+<article class="milestone">
+            <div class="milestone-year">2026</div>
+            <div class="milestone-body"><h4>The next chapter</h4><p>Joins TRICON Garage as Truck Chief on the championship-contending No. 1 Tundra, and returns to the seat in the No. 5 at Bristol and Charlotte</p>
+            </div>
+          </article>
+        </section>
       </div>
     </div>
   </section>
@@ -376,15 +405,25 @@
   <section id="partners" style="padding:clamp(48px,6vw,96px) clamp(16px,4vw,56px); background:#0b0b0e; border-bottom:1px solid rgba(255,255,255,0.10);">
     <div style="max-width:1200px; margin:0 auto;">
       <h2 style="margin:0; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(30px,3.6vw,48px); line-height:1; text-transform:uppercase;">Partners</h2>
-      <div style="margin-top:34px; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(24px,3vw,48px);">
-        <div style="min-width:0;">
-          <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:26px; text-transform:uppercase; color:#fff;">About TRICON Garage</div>
-          <p style="margin:14px 0 0; font-size:15px; line-height:1.72; color:rgba(244,244,242,0.82);">TRICON Garage is a professional racing organization fielding five full-time NASCAR Craftsman Truck Series entries. Serving as the flagship Truck Series partner of Toyota Racing Development, the team plays an integral role in the NASCAR development ladder. Headquartered in Mooresville, North Carolina, TRICON has quickly established itself as the premier home for cultivating the next generation of motorsports industry professionals. Actively involved in three different industries – racing, fabrication and transportation, the team operates out of three buildings totaling 60,000 square feet.</p>
-        </div>
-        <div style="min-width:0;">
-          <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:26px; text-transform:uppercase; color:#fff;">About Monster Truck Wars</div>
-          <p style="margin:14px 0 0; font-size:15px; line-height:1.72; color:rgba(244,244,242,0.82);">Monster Truck Wars Monster Trucks perform at Live Family Entertainment of Texas, LLC events throughout the United States and Canada with over of 100 live events annualy. Popular Monster Trucks such as Shark Attack, T-Rex, Outlaw, Locomotive, and Sheriff perform to the delight of the crowd entertaining fans of all ages. The sound of Monster Trucks and the excitement of them competing in racing and freestyle events keeps the fans on the edge of their seats during the events.</p>
-        </div>
+      <div class="partner-grid">
+        <article class="partner-card">
+          <a class="partner-logo" href="https://tricongarage.com/" target="_blank" rel="noopener" aria-label="Visit the TRICON Garage website"><img src="assets/tricon-garage-logo.jpg" alt="TRICON Garage" loading="lazy" decoding="async"></a>
+          <div class="partner-body">
+            <div class="partner-label">Competition partner</div>
+            <h3>TRICON Garage</h3>
+            <p>TRICON Garage is a professional racing organization fielding five full-time NASCAR Craftsman Truck Series entries. Serving as the flagship Truck Series partner of Toyota Racing Development, the team plays an integral role in the NASCAR development ladder. Headquartered in Mooresville, North Carolina, TRICON has quickly established itself as the premier home for cultivating the next generation of motorsports industry professionals.</p>
+            <a class="partner-site-link" href="https://tricongarage.com/" target="_blank" rel="noopener">Visit TRICON Garage <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="partner-card">
+          <a class="partner-logo partner-logo-monster" href="https://www.monstertrucks.fun/" target="_blank" rel="noopener" aria-label="Visit the Monster Truck Wars website"><img src="assets/monster-truck-wars-logo.jpg" alt="Monster Truck Wars" loading="lazy" decoding="async"></a>
+          <div class="partner-body">
+            <div class="partner-label">Featured race partner</div>
+            <h3>Monster Truck Wars</h3>
+            <p>Monster Truck Wars performs at Live Family Entertainment of Texas events throughout the United States and Canada, with more than 100 live events annually. Fan-favorite trucks including Shark Attack, T-Rex, Outlaw, Locomotive, and Sheriff deliver family entertainment through racing and freestyle competition.</p>
+            <a class="partner-site-link" href="https://www.monstertrucks.fun/" target="_blank" rel="noopener">Visit Monster Truck Wars <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
