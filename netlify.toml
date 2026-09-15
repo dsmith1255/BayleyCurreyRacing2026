@@ -1,0 +1,17 @@
+[build]
+  command = "node scripts/build.mjs"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/shopify"
+  to = "/.netlify/functions/shopify"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
