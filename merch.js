@@ -5,7 +5,7 @@
       title: 'Bayley Currey Racing T-Shirt',
       shortTitle: 'Racing T-Shirt',
       description: 'A black everyday race tee featuring the official Bayley Currey artwork in white and red.',
-      image: '/assets/merch-tee-studio.webp',
+      image: '/assets/optimized/merch-tee-studio-480-38e614f494.webp',
       sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
       skuPrefix: 'BCR-TEE',
       price: 30
@@ -15,7 +15,7 @@
       title: 'Bayley Currey Racing Hoodie',
       shortTitle: 'Racing Hoodie',
       description: 'A heavyweight black hoodie carrying the official Bayley Currey artwork in white and red.',
-      image: '/assets/merch-hoodie-studio.webp',
+      image: '/assets/optimized/merch-hoodie-studio-480-28035ccea0.webp',
       sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL'],
       skuPrefix: 'BCR-HOOD',
       price: 40
@@ -25,7 +25,7 @@
       title: 'Bayley Currey Racing Hat',
       shortTitle: 'Racing Hat',
       description: 'A structured black cap finished with official Bayley Currey artwork on the front.',
-      image: '/assets/merch-hat-studio.webp',
+      image: '/assets/optimized/merch-hat-studio-480-bb123baf7b.webp',
       sizes: ['One Size'],
       skuPrefix: 'BCR-HAT',
       price: 25
@@ -115,7 +115,7 @@
       `).join('');
       document.querySelector('[data-detail-price]').textContent = money(fallback.price);
       addButton.disabled = true;
-      status.innerHTML = 'The collection is coming soon. <a href="https://www.instagram.com/bayleycurrey05/" target="_blank" rel="noopener">Follow Bayley for release updates ↗</a>';
+      status.innerHTML = 'The collection is coming soon. <a href="https://www.instagram.com/bayleycurrey05/" target="_blank" rel="noopener">Follow Bayley for release updates</a>';
       status.classList.remove('error');
       return;
     }

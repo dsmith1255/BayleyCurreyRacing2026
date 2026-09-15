@@ -1,0 +1,29 @@
+/* Approved global pairing: Barlow Condensed headlines and Rajdhani body text. */
+:root { --type-display:'Barlow Condensed',sans-serif; --type-body:'Rajdhani',sans-serif; --type-weight:700; --type-leading:1.03; --type-tracking:.005em; }
+html body { font-family:var(--type-body) !important; font-size:1rem; font-weight:500; line-height:1.65; text-rendering:optimizeLegibility; }
+html :is(p,li,input,textarea,select,button,label,legend,nav,a) { font-family:var(--type-body) !important; }
+html :is(h1,h2,h3,h4,h5,h6,.hero-descriptor,.stat-value,.milestone-year,.career-year,.service-item strong,.empty-cart strong,.home-numbers strong,.career-result-stats strong,.about-roles strong,[style*="Saira Condensed"]) { font-family:var(--type-display) !important; font-weight:var(--type-weight) !important; line-height:var(--type-leading) !important; letter-spacing:var(--type-tracking) !important; }
+html :is(h1,h2,h3,h4,h5,h6) { overflow-wrap:break-word; text-wrap:balance; }
+html :is(p,li) { line-height:1.7 !important; letter-spacing:0 !important; }
+html :is(.eyebrow,.home-eyebrow,.journey-kicker,.chapter-heading,.partner-label,.career-category,.card-label,.stat-label,.value-num,.selector-label,.collection-count,.product-badge,.breadcrumbs,.release-meta,.contact-note,.activation-item > span,[style*="IBM Plex Mono"]) { font-family:var(--type-body) !important; font-size:.875rem !important; font-weight:600 !important; line-height:1.5 !important; letter-spacing:.075em !important; }
+html :is(.home-nav-links a,.home-nav-actions a,.header-shop,.store-nav a,.nav a,.footer-links a,.home-footer a,.home-button,.button,.add-button,.checkout-button,.product-link,.hero-shop-link,.text-link,.partner-site-link) { font-family:var(--type-body) !important; font-size:.875rem !important; font-weight:600 !important; line-height:1.4 !important; letter-spacing:.015em !important; }
+html :is(input,select,textarea) { font-size:1rem !important; line-height:1.5 !important; }
+html :is(.product-card p,.detail-description,.benefits li,.production-note,.about-copy > p:not(.home-eyebrow),.release-body > p,.lead) { font-size:1rem !important; }
+html :is(.product-price,.detail-price,.cart-line-price,.cart-subtotal) { font-family:var(--type-body) !important; font-weight:600 !important; letter-spacing:0 !important; font-variant-numeric:tabular-nums; }
+html .product-price { font-size:.9375rem !important; }
+html .detail-price { font-size:1.5rem !important; }
+html :is(.fine-print,.copyright,.store-footer p,.cart-note,.collection-caption,.gallery-label) { font-family:var(--type-body) !important; font-size:.8125rem !important; line-height:1.6 !important; letter-spacing:.015em !important; }
+/* Brand graphics are not typeset headings. Preserve their existing sizing. */
+html .home-page #top h1.hero-brand { font-size:0 !important; line-height:0 !important; }
+html .home-nav-links a { white-space:normal; }
+@media(max-width:700px) {
+  html .hero-content h1 { font-size:clamp(2.6rem,10.5vw,4.5rem) !important; }
+  html .home-page :is(#career,#schedule,#gallery,#partners) h2 { font-size:clamp(2.25rem,9vw,3rem) !important; }
+  html .home-page #about .about-copy h2 { font-size:clamp(2.25rem,9vw,3rem) !important; }
+  html .product-info h1 { font-size:clamp(2.1rem,8.5vw,3rem) !important; }
+  html .merch-hero h1 { font-size:clamp(2.25rem,9.5vw,3.5rem) !important; }
+  html .product-card h3 { font-size:clamp(1.35rem,5.4vw,1.75rem) !important; }
+  html .home-page #top .home-button { font-size:.8125rem !important; }
+  html .home-nav-links a { font-size:1rem !important; }
+  html .chapter-nav a { font-size:.875rem; letter-spacing:0; }
+}

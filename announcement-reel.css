@@ -1,0 +1,10 @@
+.announcement-reel { min-width:0; padding:24px; border:1px solid #ffffff30; background:radial-gradient(ellipse at top right,#47202a88,transparent 65%),#141417; }
+.announcement-reel h3 { margin:0 0 22px; font-size:1.8rem; text-transform:uppercase; }
+.reel-cover { display:flex; flex-direction:column; align-items:flex-start; gap:22px; padding:8px 0 24px; }
+.announcement-reel .reel-poster { display:block; width:100%; height:auto; max-height:440px; object-fit:contain; margin-bottom:16px; }
+.reel-cover button { cursor:pointer; justify-content:center; }
+.announcement-reel [hidden] { display:none !important; }
+.announcement-reel .reel-status { margin:0 0 8px; color:#bfc0c8; font-size:.875rem; line-height:1.5; }
+.reel-embed { width:100%; max-width:420px; margin:0 auto 16px; }
+.reel-embed .instagram-media,.reel-embed iframe { min-width:0 !important; max-width:100% !important; width:100% !important; margin:0 !important; border:0; }
+@media(max-width:700px) { .announcement-reel { padding:16px; } .announcement-reel .reel-poster { max-height:360px; } .announcement-reel:has(iframe) { padding:12px 0; } .announcement-reel:has(iframe) > :not(.reel-embed) { margin-inline:16px; } .announcement-reel:has(iframe) .reel-poster { width:calc(100% - 32px); } }
