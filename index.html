@@ -10,12 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="refinements.css?v=7">
-  <link rel="stylesheet" href="home.css?v=5">
+  <link rel="stylesheet" href="home.css?v=8">
+  <script src="hero-parallax.js?v=2" defer></script>
+  <link rel="stylesheet" href="career-reveal.css?v=2">
+  <link rel="stylesheet" href="track-outlines.css?v=3">
+  <script src="career-reveal.js?v=2" defer></script>
   <script src="motion.js?v=5" defer></script>
   <script src="home.js?v=1" defer></script>
   <link rel="stylesheet" href="/typography.css?v=2">
-  <link rel="stylesheet" href="gallery-lightbox.css?v=1">
-  <script src="gallery.js?v=3" defer></script>
+  <link rel="stylesheet" href="gallery-lightbox.css?v=2">
+  <script src="gallery.js?v=4" defer></script>
   <link rel="stylesheet" href="announcement-reel.css?v=1">
   <script src="announcement-reel.js?v=1" defer></script>
 </head>
@@ -44,7 +48,7 @@
   <button class="menu-scrim" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
   <main id="main-content">
     <section id="top" class="home-hero">
-      <div class="hero-backdrop" aria-hidden="true"><img alt="" src="/assets/optimized/bayley-hero-portrait-1280-775f929688.webp" srcset="/assets/optimized/bayley-hero-portrait-480-ea79ac8235.webp 480w, /assets/optimized/bayley-hero-portrait-800-d7a6c83b5a.webp 800w, /assets/optimized/bayley-hero-portrait-1200-c607b3a3ac.webp 1200w, /assets/optimized/bayley-hero-portrait-1280-775f929688.webp 1280w" sizes="100vw" width="1280" height="853" loading="eager" decoding="async" fetchpriority="high"></div>
+      <div class="hero-backdrop" aria-hidden="true"><img alt="" src="/assets/optimized/bayley-hero-clean-1280.webp" srcset="/assets/optimized/bayley-hero-clean-800.webp 800w, /assets/optimized/bayley-hero-clean-1280.webp 1280w" sizes="(max-width:700px) 900px, 100vw" width="1280" height="853" loading="eager" decoding="async" fetchpriority="high"></div>
       <div class="home-wrap hero-layout">
         <div class="hero-copy">
           <p class="home-eyebrow">Driftwood, Texas / NASCAR</p>
@@ -61,7 +65,11 @@
     </section>
     <section id="merch" class="home-merch" aria-labelledby="merch-title">
       <div class="home-wrap merch-feature">
-        <div class="merch-feature-copy"><p class="home-eyebrow">Official merchandise</p><h2 id="merch-title">Wear<br>the race.</h2><a class="home-button home-button-dark" href="merch/">Shop the collection</a></div>
+        <div class="merch-feature-copy">
+          <div class="merch-brand-graphic"><img src="assets/bayley-currey-bc-logo.svg" alt="Bayley Currey" width="233" height="232" loading="lazy" decoding="async"></div>
+          <h2 id="merch-title"><span>Official</span> <span>Merch.</span></h2>
+          <a class="home-button home-button-dark" href="merch/">Shop the collection</a>
+        </div>
         <div class="merch-feature-products">
           <a href="merch/tee/"><img alt="Black Bayley Currey signature T-shirt" src="/assets/optimized/merch-tee-studio-1200-02ba987cab.webp" srcset="/assets/optimized/merch-tee-studio-480-38e614f494.webp 480w, /assets/optimized/merch-tee-studio-800-f1d7940c2d.webp 800w, /assets/optimized/merch-tee-studio-1200-02ba987cab.webp 1200w" sizes="(max-width: 700px) 30vw, 250px" width="1200" height="1200" loading="lazy" decoding="async"><span>Signature tee</span></a>
           <a href="merch/hoodie/"><img alt="Black Bayley Currey signature hoodie" src="/assets/optimized/merch-hoodie-studio-1200-adacdbec05.webp" srcset="/assets/optimized/merch-hoodie-studio-480-28035ccea0.webp 480w, /assets/optimized/merch-hoodie-studio-800-326fb761e7.webp 800w, /assets/optimized/merch-hoodie-studio-1200-adacdbec05.webp 1200w" sizes="(max-width: 700px) 30vw, 250px" width="1200" height="1200" loading="lazy" decoding="async"><span>Signature hoodie</span></a>
@@ -97,7 +105,7 @@
             <p class="reel-status" data-reel-status role="status">Loads from Instagram when you tap to watch.</p>
             <a class="text-link" href="https://www.instagram.com/reel/DdHaHYjI-zm/" target="_blank" rel="noopener noreferrer">Open on Instagram</a>
           </article>
-          <details class="press-release" id="tricon-release" open>
+          <details class="press-release" id="tricon-release">
             <summary><div><span class="release-meta">Official release / September 10, 2026</span><h3>Bayley Currey to drive select races for TRICON</h3><span class="release-action"><span class="release-open-label">Read the full release · 2 min</span><span class="release-close-label">Close the release</span></span></div><span class="release-icon" aria-hidden="true">+</span></summary>
             <div class="release-body">
         <p style="margin:0 0 18px;"><strong style="color:#fff;">MOORESVILLE, N.C. (September 10, 2026)</strong> – TRICON Garage (TRICON) is pleased to announce that veteran NASCAR Truck Series competitor Bayley Currey has been tabbed to drive the No. 5 Toyota Tundra TRD Pro at Bristol Motor Speedway and Charlotte Motor Speedway.</p>
@@ -166,25 +174,78 @@
             </div>
           </article>
 
-          <article class="career-card">
+          <article class="career-card career-card-photo">
+            <div class="career-photo" aria-hidden="true">
+              <img src="/assets/optimized/archive-43296e6ad183-800.webp" srcset="/assets/optimized/archive-286a62ac64f0-480.webp 480w, /assets/optimized/archive-43296e6ad183-800.webp 800w" sizes="(max-width:600px) calc(100vw - 32px), (max-width:900px) 45vw, 380px" width="800" height="533" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="career-photo-wipe" aria-hidden="true"></div>
             <div class="career-card-top"><span class="career-year">2025</span><span class="career-category">Stage winner</span></div>
             <h3>Led the field at Bristol</h3>
             <p>Captured his first career stage win at one of NASCAR’s toughest short tracks.</p>
           </article>
-          <article class="career-card">
+          <article class="career-card career-card-photo">
+            <div class="career-photo" aria-hidden="true">
+              <img src="/assets/optimized/atlanta-2023-no41-800.webp" srcset="/assets/optimized/atlanta-2023-no41-480.webp 480w, /assets/optimized/atlanta-2023-no41-800.webp 800w" sizes="(max-width:600px) calc(100vw - 32px), (max-width:900px) 45vw, 380px" width="800" height="533" alt="" loading="lazy" decoding="async" style="object-position:80% 85%;">
+            </div>
+            <div class="career-photo-wipe" aria-hidden="true"></div>
             <div class="career-card-top"><span class="career-year">2023</span><span class="career-category">Career-best finish</span></div>
             <h3>31st to fourth at Atlanta</h3>
             <p>Charged through the field for a career-best finish, then returned to Atlanta and finished fourth again in 2025.</p>
+            <span class="career-photo-caption">Pictured: Atlanta 2023</span>
           </article>
-          <article class="career-card">
+          <article class="career-card career-card-photo">
+            <div class="career-photo" aria-hidden="true">
+              <img src="/assets/optimized/archive-d1e86c38e309-800.webp" srcset="/assets/optimized/archive-50aaf7490a98-480.webp 480w, /assets/optimized/archive-d1e86c38e309-800.webp 800w" sizes="(max-width:600px) calc(100vw - 32px), (max-width:900px) 45vw, 380px" width="800" height="600" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="career-photo-wipe" aria-hidden="true"></div>
             <div class="career-card-top"><span class="career-year">2021</span><span class="career-category">Breakthrough run</span></div>
             <h3>Seventh at Phoenix</h3>
             <p>Delivered an underdog team a massive seventh-place finish in the O&rsquo;Reilly Auto Parts Series.</p>
           </article>
-          <article class="career-card">
-            <div class="career-card-top"><span class="career-year">4 types</span><span class="career-category">Track versatility</span></div>
+          <article class="career-card career-track-types career-card-track-reveal">
+            <div class="career-card-top"><span class="career-year">9 tracks</span><span class="career-category">12 top-ten finishes</span></div>
             <h3>Speed everywhere</h3>
-            <p>Top tens on a short track, superspeedway, intermediate oval, and flat oval.</p>
+            <div class="track-outline-reveal">
+            <div class="track-outline-grid" role="list" aria-label="All nine tracks with Bayley Currey Truck or Xfinity top-ten finishes through 2025">
+              <figure class="track-outline" role="listitem">
+                <svg viewBox="0 0 220 110" aria-hidden="true" focusable="false"><path d="M62 18 H158 C184 18 204 30 204 49 C204 64 193 74 174 82 L151 93 H69 L46 82 C27 74 16 64 16 49 C16 30 36 18 62 18 Z"/></svg>
+                <figcaption><strong>Atlanta</strong><span>2 top tens</span></figcaption>
+              </figure>
+              <figure class="track-outline" role="listitem">
+                <svg viewBox="0 0 220 110" aria-hidden="true" focusable="false"><path d="M59 14 H161 A41 41 0 0 1 161 96 H59 A41 41 0 0 1 59 14 Z"/></svg>
+                <figcaption><strong>Homestead-Miami</strong><span>1 top ten</span></figcaption>
+              </figure>
+              <figure class="track-outline" role="listitem">
+                <svg viewBox="0 0 220 110" aria-hidden="true" focusable="false"><path d="M61 18 H159 C185 18 204 30 204 50 C204 65 188 77 167 85 Q110 106 53 85 C32 77 16 65 16 50 C16 30 35 18 61 18 Z"/></svg>
+                <figcaption><strong>Kansas</strong><span>1 top ten</span></figcaption>
+              </figure>
+              <figure class="track-outline" role="listitem">
+                <svg viewBox="0 0 220 110" aria-hidden="true" focusable="false"><path d="M69 15 H151 C181 15 205 28 205 49 C205 75 164 96 110 96 C56 96 15 75 15 49 C15 28 39 15 69 15 Z"/></svg>
+                <figcaption><strong>Michigan</strong><span>1 top ten</span></figcaption>
+              </figure>
+              <figure class="track-outline" role="listitem">
+                <svg viewBox="0 0 220 110" aria-hidden="true" focusable="false"><path d="M51 29 H169 C192 29 203 40 203 55 C203 70 192 81 169 81 H51 C28 81 17 70 17 55 C17 40 28 29 51 29 Z"/></svg>
+                <figcaption><strong>Milwaukee Mile</strong><span>1 top ten</span></figcaption>
+              </figure>
+              <figure class="track-outline" role="listitem">
+                <svg viewBox="0 0 220 110" aria-hidden="true" focusable="false"><path d="M65 19 H155 C183 19 203 31 203 50 C203 71 158 96 110 96 C62 96 17 71 17 50 C17 31 37 19 65 19 Z"/></svg>
+                <figcaption><strong>Nashville</strong><span>2 top tens</span></figcaption>
+              </figure>
+              <figure class="track-outline" role="listitem">
+                <svg viewBox="0 0 220 110" aria-hidden="true" focusable="false"><path d="M63 22 H157 C185 22 201 36 201 55 C201 74 185 88 157 88 H63 C35 88 19 74 19 55 C19 36 35 22 63 22 Z"/></svg>
+                <figcaption><strong>New Hampshire</strong><span>1 top ten</span></figcaption>
+              </figure>
+              <figure class="track-outline" role="listitem">
+                <svg viewBox="0 0 220 110" aria-hidden="true" focusable="false"><path d="M50 10 H154 C181 10 202 30 202 55 C202 76 189 90 168 94 L104 105 C94 107 84 104 75 97 L39 70 C25 57 19 46 19 35 C19 21 33 10 50 10 Z"/></svg>
+                <figcaption><strong>Phoenix</strong><span>2 top tens</span></figcaption>
+              </figure>
+              <figure class="track-outline" role="listitem">
+                <svg viewBox="0 0 220 110" aria-hidden="true" focusable="false"><path d="M64 17 H158 C186 17 205 29 205 49 C205 64 195 74 177 81 L154 91 Q146 95 136 95 H85 Q75 95 67 91 L43 81 C25 74 15 63 15 49 C15 29 35 17 64 17 Z"/></svg>
+                <figcaption><strong>Texas</strong><span>1 top ten</span></figcaption>
+              </figure>
+            </div>
+            </div>
+            <p class="track-outline-note"><a href="https://www.driveraverages.com/nascar_truckseries/driver.php?drv_id=4171" target="_blank" rel="noopener noreferrer">Truck</a> &amp; <a href="https://www.driveraverages.com/nascar_nxs/driver.php?drv_id=4171" target="_blank" rel="noopener noreferrer">Xfinity</a> results through 2025 · Outlines not to scale</p>
           </article>
           <article class="career-card">
             <div class="career-card-top"><span class="career-year">2017</span><span class="career-category">Truck Series</span></div>

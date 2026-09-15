@@ -6,7 +6,7 @@
   const dialog = document.createElement('dialog');
   dialog.className = 'gallery-lightbox';
   dialog.setAttribute('aria-label', 'Enlarged gallery photo');
-  dialog.innerHTML = '<div class="gallery-lightbox-frame"><button class="gallery-lightbox-close" type="button" autofocus>Close photo</button><img alt=""><p></p></div>';
+  dialog.innerHTML = '<div class="gallery-lightbox-frame"><button class="gallery-lightbox-close" type="button" aria-label="Close photo" title="Close photo" autofocus><span aria-hidden="true">+</span></button><img alt=""><p></p></div>';
   document.body.append(dialog);
   const fullImage = dialog.querySelector('img');
   let opener;
