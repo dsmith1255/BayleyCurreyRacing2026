@@ -1,163 +1,96 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="assets/bayley-currey-bc-logo.svg" type="image/svg+xml">
-<script src="./support.js"></script>
-<link rel="stylesheet" href="refinements.css?v=7">
-<script src="motion.js?v=4" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bayley Currey Racing | Driver. Truck Chief. Racer.</title>
+  <meta name="description" content="The official home of Bayley Currey. Explore his racing story, TRICON Garage news, official merchandise, and sponsorship opportunities.">
+  <link rel="icon" href="assets/bayley-currey-bc-logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="refinements.css?v=7">
+  <link rel="stylesheet" href="home.css?v=1">
+  <script src="motion.js?v=5" defer></script>
+  <script src="home.js?v=1" defer></script>
 </head>
-<body>
-<x-dc>
-<helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bayley Currey Racing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;700;800;900&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
-<style>
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; background: #08080a; color: #f4f4f2; font-family: "IBM Plex Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-  a { color: #ff1620; text-decoration: none; }
-  a:hover { color: #ff1620; }
-  @keyframes grainShift {
-    0% { transform: translate(0,0); }
-    20% { transform: translate(-3%,2%); }
-    40% { transform: translate(2%,-3%); }
-    60% { transform: translate(-2%,-2%); }
-    80% { transform: translate(3%,1%); }
-    100% { transform: translate(0,0); }
-  }
-  ::selection { background: #ff1620; color: #fff; }
-</style>
-</helmet>
-
-<div class="site-shell" style="position:relative; background:#08080a;">
-
-  <div aria-hidden="true" style="position:fixed; inset:-15%; z-index:60; pointer-events:none; opacity:0.16; mix-blend-mode:overlay; background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E&quot;); animation:grainShift 0.9s steps(3) infinite;"></div>
-  <div aria-hidden="true" style="position:fixed; inset:0; z-index:59; pointer-events:none; opacity:0.35; background:radial-gradient(120% 80% at 50% 0%, rgba(255,255,255,0.07) 0%, rgba(0,0,0,0) 55%), radial-gradient(100% 60% at 50% 100%, rgba(255,22,32,0.10) 0%, rgba(0,0,0,0) 60%);"></div>
-
-  <header class="site-header" style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px clamp(16px,4vw,56px); background:rgba(8,8,10,0.88); backdrop-filter:blur(8px); border-bottom:1px solid rgba(255,255,255,0.10);">
-    <a class="site-logo" href="#top" style="display:block; flex:0 0 auto;"><img src="assets/bayley-currey-roof-rail.svg" alt="Bayley Currey" style="display:block; height:clamp(30px,4.4vw,44px); width:auto;"></a>
-    <a class="sponsor-quick-link" href="sponsorship.html">Partner <span aria-hidden="true">→</span></a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span class="menu-toggle-label">Menu</span>
-      <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i></span>
-    </button>
-    <nav class="site-nav" id="site-nav" aria-label="Primary navigation" style="display:flex; flex-wrap:wrap; justify-content:flex-end; align-items:center; gap:clamp(12px,1.8vw,26px); font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase;">
-      <a href="#about" style="color:#f4f4f2">About</a>
-      <a href="#news" style="color:#f4f4f2">News</a>
-      <a href="#career" style="color:#f4f4f2">Career</a>
-      <a href="#gallery" style="color:#f4f4f2">Gallery</a>
-      <a href="#schedule" style="color:#f4f4f2">2026</a>
-      <a href="#partners" style="color:#f4f4f2">Partners</a>
-      <a href="merch/" style="color:#f4f4f2">Merch</a>
-      <a href="sponsorship.html" style="color:#ff1620">Sponsorship</a>
-    </nav>
+<body class="home-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="site-shell">
+  <header class="home-header" data-menu-open="false">
+    <div class="home-header-bar">
+      <a class="home-logo" href="#top" aria-label="Bayley Currey Racing home"><img src="assets/bayley-currey-roof-rail.svg" width="240" height="50" alt="Bayley Currey"></a>
+      <a class="header-shop" href="merch/">Shop merch <span aria-hidden="true">↗</span></a>
+      <button class="home-menu-toggle" type="button" aria-expanded="false" aria-controls="home-navigation"><span data-menu-label>Menu</span><span class="home-menu-icon" aria-hidden="true"></span></button>
+      <nav class="home-navigation" id="home-navigation" aria-label="Main navigation">
+        <div class="menu-caption">Explore Bayley Currey Racing</div>
+        <div class="home-nav-links">
+          <a href="#about"><span class="nav-number" aria-hidden="true">01</span>About Bayley</a>
+          <a href="#career"><span class="nav-number" aria-hidden="true">02</span>Career</a>
+          <a href="#news"><span class="nav-number" aria-hidden="true">03</span>Latest news</a>
+          <a href="#schedule"><span class="nav-number" aria-hidden="true">04</span>2026 races</a>
+          <a href="#gallery"><span class="nav-number" aria-hidden="true">05</span>Gallery</a>
+          <a href="#partners"><span class="nav-number" aria-hidden="true">06</span>Partners</a>
+        </div>
+        <div class="home-nav-actions"><a class="nav-merch" href="merch/">Shop merch <span aria-hidden="true">↗</span></a><a class="nav-sponsor" href="sponsorship.html">Sponsorship <span aria-hidden="true">↗</span></a></div>
+      </nav>
+    </div>
   </header>
+  <button class="menu-scrim" type="button" aria-label="Close navigation" tabindex="-1" hidden></button>
+  <main id="main-content">
+    <section id="top" class="home-hero">
+      <div class="home-wrap hero-layout">
+        <div class="hero-copy">
+          <p class="home-eyebrow">Driftwood, Texas / NASCAR</p>
+          <h1>Bayley<br><span>Currey.</span></h1>
+          <p class="hero-descriptor">Driver. Truck chief. Racer.</p>
+          <p class="hero-intro">From building speed in the shop to finding it on the track. The next chapter is with TRICON Garage.</p>
+          <div class="home-actions"><a class="home-button home-button-red" href="sponsorship.html">Partner with Bayley <span aria-hidden="true">↗</span></a><a class="home-button home-button-light" href="merch/">Shop merch <span aria-hidden="true">↗</span></a></div>
+          <a class="hero-news-link" href="#news">Back in the No. 5 for 2026 <span aria-hidden="true">↓</span></a>
+        </div>
+        <figure class="hero-visual">
+          <img class="hero-truck" src="bayley-no-5-mtvxatc4-oqm2.jpg" alt="Bayley Currey’s No. 5 Monster Truck Wars Toyota Tundra TRD Pro" width="2500" height="3125" fetchpriority="high">
+          <div class="hero-bc" aria-hidden="true"><img src="assets/bayley-currey-bc-logo.svg" width="80" height="80" alt=""></div>
+          <figcaption><span>2026 / TRICON Garage</span><strong>No. 5 <span>Tundra TRD Pro</span></strong></figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="home-numbers" aria-label="Career at a glance">
+      <div class="home-wrap"><div><strong>206</strong><span>NASCAR starts</span></div><div><strong>150+</strong><span>Career wins</span></div><div><strong>18</strong><span>Championships</span></div><a href="#career">The racing record <span aria-hidden="true">↓</span></a></div>
+    </section>
+    <section id="merch" class="home-merch" aria-labelledby="merch-title">
+      <div class="home-wrap merch-feature">
+        <div class="merch-feature-copy"><p class="home-eyebrow">Official merchandise</p><h2 id="merch-title">Wear<br>the race.</h2><a class="home-button home-button-dark" href="merch/">Shop the collection <span aria-hidden="true">↗</span></a></div>
+        <div class="merch-feature-products">
+          <a href="merch/tee/"><img src="assets/merch-tee-studio.webp" width="1200" height="1200" loading="lazy" alt="Black Bayley Currey signature T-shirt"><span>Signature tee <span aria-hidden="true">↗</span></span></a>
+          <a href="merch/hoodie/"><img src="assets/merch-hoodie-studio.webp" width="1200" height="1200" loading="lazy" alt="Black Bayley Currey signature hoodie"><span>Signature hoodie <span aria-hidden="true">↗</span></span></a>
+          <a href="merch/hat/"><img src="assets/merch-hat-studio.webp" width="1200" height="1200" loading="lazy" alt="Black cap with the BC monogram"><span>BC cap <span aria-hidden="true">↗</span></span></a>
+        </div>
+      </div>
+    </section>
 
-  <section id="top" style="position:relative; padding:clamp(48px,7vw,104px) clamp(16px,4vw,56px) clamp(40px,5vw,72px); border-bottom:1px solid rgba(255,255,255,0.10);">
-    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(28px,4vw,64px); align-items:center;">
-      <div style="min-width:0;">
-        <div style="display:flex; align-items:center; gap:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#ff1620;">
-          <span style="width:34px; height:2px; background:#ff1620; display:block;"></span>
-          <span>Part-Time 2026 &nbsp;/&nbsp; NASCAR Craftsman Truck Series</span>
-        </div>
-        <h1 style="margin:18px 0 0; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(52px,9vw,116px); line-height:0.86; letter-spacing:-0.02em; text-transform:uppercase; text-wrap:balance;">
-          No. 5 <span style="color:#ff1620;">Toyota</span><br>Tundra TRD Pro
-        </h1>
-        <p style="margin:22px 0 0; max-width:44ch; font-size:clamp(15px,1.3vw,18px); line-height:1.6; color:rgba(244,244,242,0.82);">
-          Bayley Currey returns to the driver's seat with TRICON Garage for select races in 2026 — Bristol Motor Speedway and Charlotte Motor Speedway.
-        </p>
-        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:30px;">
-          <a href="#news" style="display:inline-block; padding:14px 26px; background:#ff1620; color:#fff; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; border:1px solid #ff1620;" style-hover="background:#08080a; color:#ff1620">Read the Release</a>
-          <a href="https://lionelracing.com" target="_blank" rel="noopener" style="display:inline-block; padding:14px 26px; background:transparent; color:#f4f4f2; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; border:1px solid rgba(255,255,255,0.28);" style-hover="border-color:#ff1620; color:#ff1620">Pre-Order the Diecast</a>
+    <section id="about" class="home-section">
+      <div class="home-wrap about-layout">
+        <figure class="about-photo"><img src="assets/currey.png" width="900" height="1000" alt="Bayley Currey" loading="lazy" decoding="async"><figcaption>Driftwood, TX → Mooresville, N.C.</figcaption></figure>
+        <div class="about-copy">
+          <p class="home-eyebrow">Meet Bayley</p>
+          <h2>A racer.<br><span>Through and through.</span></h2>
+          <p>A second-generation driver, mechanic, and fabricator. From Texas short tracks to NASCAR’s national stage, Bayley’s racing résumé includes more than 150 wins and 18 championships.</p>
+          <div class="about-roles"><div><span>Behind the wheel</span><strong>No. 5 Toyota Tundra TRD Pro</strong></div><div><span>Behind the build</span><strong>No. 1 TRICON Truck Chief</strong></div></div>
+          <p>Away from the track, it’s life with Lexie, their dogs Fat Pat and Jetson, and the <em>Wheelmen of Genius</em> racing podcast.</p>
+          <a class="text-link" href="#timeline">Follow the racing story <span aria-hidden="true">↓</span></a>
         </div>
       </div>
-      <div style="min-width:0; position:relative;">
-        <div style="position:relative; border:1px solid rgba(255,255,255,0.14); background:#0d0d10; padding:12px;">
-          <img src="./bayley-no-5-mtvxatc4-oqm2.jpg" alt="bayley-no-5" width="2500" height="3125" style="max-width: 100%; height: auto; display: block; object-fit: cover; width: 2500px; aspect-ratio: 2500 / 3125; top: 11px">
-          
-        </div>
-        
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section style="padding:0 clamp(16px,4vw,56px); border-bottom:1px solid rgba(255,255,255,0.10); background:#0b0b0e;">
-    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));">
-      <div style="padding:clamp(24px,3vw,40px) 0; border-right:1px solid rgba(255,255,255,0.08);">
-        <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(40px,5vw,64px); line-height:1; color:#fff;">206</div>
-        <div style="margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(244,244,242,0.55);">Races in 9 Years</div>
-      </div>
-      <div style="padding:clamp(24px,3vw,40px) 0 clamp(24px,3vw,40px) clamp(16px,2vw,28px); border-right:1px solid rgba(255,255,255,0.08);">
-        <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(40px,5vw,64px); line-height:1; color:#ff1620;">83</div>
-        <div style="margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(244,244,242,0.55);">Truck Series Starts</div>
-      </div>
-      <div style="padding:clamp(24px,3vw,40px) 0 clamp(24px,3vw,40px) clamp(16px,2vw,28px); border-right:1px solid rgba(255,255,255,0.08);">
-        <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(40px,5vw,64px); line-height:1; color:#fff;">111</div>
-        <div style="margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(244,244,242,0.55);">O&rsquo;Reilly Auto Parts Series Starts</div>
-      </div>
-      <div style="padding:clamp(24px,3vw,40px) 0 clamp(24px,3vw,40px) clamp(16px,2vw,28px);">
-        <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(40px,5vw,64px); line-height:1; color:#fff;">12</div>
-        <div style="margin-top:6px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(244,244,242,0.55);">Cup Series Starts</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" style="padding:clamp(48px,6vw,96px) clamp(16px,4vw,56px); border-bottom:1px solid rgba(255,255,255,0.10);">
-    <div style="max-width:1200px; margin:0 auto;">
-      <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;">
-        <h2 style="margin:0; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(30px,3.6vw,48px); line-height:1; text-transform:uppercase;">About Bayley</h2>
-        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#ff1620;">Driftwood, TX → Mooresville, N.C.</span>
-      </div>
-      <div style="margin-top:34px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(28px,4vw,64px); align-items:start;">
-        <div style="min-width:0;">
-          <div style="border:1px solid rgba(255,255,255,0.14); background:#0d0d10; padding:12px;">
-            <img src="assets/currey.png" alt="Bayley Currey" style="display:block; width:100%; height:auto;">
-          </div>
-          <div style="display:flex; align-items:baseline; gap:12px; margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(244,244,242,0.55);">
-          <span>Driftwood, TX</span><span style="color:#ff1620;">•</span><span>Age 29</span><span style="color:#ff1620;">•</span><span>206 Starts</span>
-        </div><div style="margin-top:14px; display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); gap:1px; background:rgba(255,255,255,0.10);">
-            <div style="background:#08080a; padding:18px 0;">
-              <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:32px; line-height:1;">150+</div>
-              <div style="margin-top:4px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(244,244,242,0.55);">Career Wins</div>
-            </div>
-            <div style="background:#08080a; padding:18px 0 18px 14px;">
-              <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:32px; line-height:1; color:#ff1620;">18</div>
-              <div style="margin-top:4px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(244,244,242,0.55);">Championships</div>
-            </div>
-            <div style="background:#08080a; padding:18px 0 18px 14px;">
-              <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:32px; line-height:1;">2nd</div>
-              <div style="margin-top:4px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(244,244,242,0.55);">Generation Driver</div>
-            </div>
-          </div>
-        </div>
-        <div style="min-width:0;">
-          <p style="margin:0; font-family:'Saira Condensed',sans-serif; font-weight:700; font-size:clamp(22px,2.6vw,34px); line-height:1.18; color:#fff; text-wrap:pretty;">Bayley Currey is a second-generation driver who has amassed more than 150 wins and 18 state, regional, series and track championships.</p>
-          <p style="margin:22px 0 0; font-size:clamp(15px,1.25vw,17px); line-height:1.72; color:rgba(244,244,242,0.86);">He started in Legends cars in 2009, won three state championships before he was old enough to drive on the highway, then moved through modifieds and late models in Central Texas — picking up points championships at Central Texas Speedway and the Viper Series title at South Alabama Speedway along the way. His first NASCAR national series start came in 2017 at Martinsville, and 200-plus starts across the Truck, O&rsquo;Reilly Auto Parts and Cup Series have followed.</p>
-          <p style="margin:18px 0 0; font-size:clamp(15px,1.25vw,17px); line-height:1.72; color:rgba(244,244,242,0.86);">Texas Native, Bayley Currey, embodies the raw, unfiltered spirit of NASCAR’s “Hell Yeah” era. He isn’t just a driver who shows up with a helmet; he is a mechanic, a fabricator, and a student of the sport who knows that speed is made in the shop before it’s unleashed on the track. That work ethic is what put him on the other side of the wall as Truck Chief for TRICON’s championship-contending No. 1 Toyota Tundra TRD Pro — and what earned him the No. 5 for 2026.</p>
-          <p style="margin:18px 0 0; font-size:clamp(15px,1.25vw,17px); line-height:1.72; color:rgba(244,244,242,0.86);">Away from the track, Bayley lives with his wife Lexie and their two doodles, Fat Pat and Jetson. He also co-hosts the racing podcast <em style="color:#fff; font-style:normal; border-bottom:1px solid #ff1620;">Wheelmen of Genius</em>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="news" style="padding:clamp(48px,6vw,96px) clamp(16px,4vw,56px); border-bottom:1px solid rgba(255,255,255,0.10);">
-    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(28px,4vw,64px);">
-      <div style="min-width:0;">
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#ff1620;">Official Release</div>
-        <h2 style="margin:14px 0 0; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(34px,4.4vw,60px); line-height:0.94; text-transform:uppercase; letter-spacing:-0.01em; text-wrap:balance;">Bayley Currey to Drive Select Races for TRICON</h2>
-        <p style="margin:16px 0 0; font-family:'Saira Condensed',sans-serif; font-weight:700; font-size:clamp(17px,1.6vw,22px); line-height:1.25; color:rgba(244,244,242,0.72); text-transform:uppercase; letter-spacing:0.01em;">Veteran Driver Set to Return in No. 5 Tundra for Two Events</p>
-        <div aria-hidden="true" style="width:min(320px,100%); height:3px; background:#ff1620; margin:26px 0 0;"></div>
-        <div style="margin-top:22px; font-family:'IBM Plex Mono',monospace; font-size:11px; line-height:2; letter-spacing:0.14em; text-transform:uppercase; color:rgba(244,244,242,0.5);">
-          <div>September 10, 2026</div>
-          <div>2 Minute Read</div>
-        </div>
-      </div>
-      <div style="min-width:0; font-size:clamp(15px,1.25vw,17px); line-height:1.72; color:rgba(244,244,242,0.86);">
+    <section id="news" class="home-section">
+      <div class="home-wrap">
+        <div class="home-section-heading"><div><p class="home-eyebrow">From the garage</p><h2>The latest.</h2></div></div>
+        <div class="home-news-layout">
+          <figure class="news-image"><img src="assets/bristol-44.jpg" width="1200" height="900" loading="lazy" alt="Bayley Currey’s No. 44 truck at Bristol during an earlier season"><figcaption>Back to Bristol. A new chapter with TRICON.</figcaption></figure>
+          <details class="press-release" id="tricon-release">
+            <summary><div><span class="release-meta">Official release / September 10, 2026</span><h3>Bayley Currey to drive select races for TRICON</h3><span class="release-action"><span class="release-open-label">Read the full release · 2 min</span><span class="release-close-label">Close the release</span></span></div><span class="release-icon" aria-hidden="true">+</span></summary>
+            <div class="release-body">
         <p style="margin:0 0 18px;"><strong style="color:#fff;">MOORESVILLE, N.C. (September 10, 2026)</strong> – TRICON Garage (TRICON) is pleased to announce that veteran NASCAR Truck Series competitor Bayley Currey has been tabbed to drive the No. 5 Toyota Tundra TRD Pro at Bristol Motor Speedway and Charlotte Motor Speedway.</p>
         <p style="margin:0 0 18px;">In a career defined by outperforming his equipment, the 29-year-old has over 200 starts across NASCAR’s top three divisions, culminating in a career-best, fourth-place finish in the NASCAR Truck Series (NCTS) at Atlanta Motor Speedway in both 2023 and 2025.</p>
         <p style="margin:0 0 18px;">This opportunity marks Currey’s return to NASCAR competition in the driver’s seat for the first time since 2025, when he recorded two top-tens during a partial NCTS campaign. Currey has since shifted to full-time truck chiefing duties, joining TRICON during the 2026 offseason. The Driftwood, TX native has been an instrumental force, helping guide the No. 1 team to two wins, providing valuable experience and insight both behind the wheel and under the hood.</p>
@@ -173,6 +106,8 @@
         <p style="margin:0 0 18px;">The UNOH 250 Presented by Ohio Logistics at Bristol Motor Speedway will be televised live on FOX Sports 1 on Thursday, September 17 at 8:00 p.m. ET, with radio coverage provided by SiriusXM and the NASCAR Racing Network.</p>
         <p style="margin:0 0 18px;">Pre-orders for the No. 5 Monster Truck Wars Toyota Tundra TRD Pro are available on <a href="https://lionelracing.com" target="_blank" rel="noopener" style="color:#ff1620" style-hover="color:#ffffff">lionelracing.com</a>.</p>
         <p style="margin:0;">Future partners will be unveiled for Charlotte Motor Speedway at a later date.</p>
+            </div>
+          </details>
       </div>
     </div>
   </section>
@@ -249,43 +184,7 @@
           </article>
         </div>
       </div>
-      <div style="min-width:0;">
-        <h2 style="margin:0; font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:clamp(30px,3.6vw,48px); line-height:1; text-transform:uppercase;">The Driver</h2>
-        <p style="margin:22px 0 0; font-size:clamp(15px,1.25vw,17px); line-height:1.72; color:rgba(244,244,242,0.86);">Texas Native, Bayley Currey, embodies the raw, unfiltered spirit of NASCAR’s “Hell Yeah” era. He isn’t just a driver who shows up with a helmet; he is a mechanic, a fabricator, and a student of the sport who knows that speed is made in the shop before it’s unleashed on the track.</p>
-        <p style="margin:18px 0 0; font-size:clamp(15px,1.25vw,17px); line-height:1.72; color:rgba(244,244,242,0.86);">For 2026, Bayley takes on a defining dual role with TRICON Garage: serving as the Truck Chief for the championship-contending No. 1 Toyota Tundra TRD Pro, while preparing to step behind the wheel to prove that the hands that build the truck are the best ones to drive it.</p>
-        <div style="margin-top:34px; display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px; background:rgba(255,255,255,0.10);">
-          <div style="background:#08080a; padding:20px 0;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(244,244,242,0.5);">Hometown</div>
-            <div style="margin-top:8px; font-family:'Saira Condensed',sans-serif; font-weight:700; font-size:22px; text-transform:uppercase;">Driftwood, Texas</div>
-          </div>
-          <div style="background:#08080a; padding:20px 0 20px clamp(14px,2vw,24px);">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(244,244,242,0.5);">First Race</div>
-            <div style="margin-top:8px; font-family:'Saira Condensed',sans-serif; font-weight:700; font-size:22px; text-transform:uppercase;">Martinsville 2017</div>
-          </div>
-          <div style="background:#08080a; padding:20px 0 20px clamp(14px,2vw,24px);">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(244,244,242,0.5);">Favorite Track</div>
-            <div style="margin-top:8px; font-family:'Saira Condensed',sans-serif; font-weight:700; font-size:22px; text-transform:uppercase;">Homestead Miami</div>
-          </div>
-        </div>
-        <div style="margin-top:34px; padding:26px; border:1px solid rgba(255,255,255,0.12); background:#0b0b0e;">
-          <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:#ff1620;">Fanbase</div>
-          <div style="margin-top:16px; display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); gap:18px;">
-            <div>
-              <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:30px; line-height:1;">9,000+</div>
-              <div style="margin-top:4px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(244,244,242,0.55);">X Followers</div>
-            </div>
-            <div>
-              <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:30px; line-height:1;">4,900+</div>
-              <div style="margin-top:4px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(244,244,242,0.55);">Instagram</div>
-            </div>
-            <div>
-              <div style="font-family:'Saira Condensed',sans-serif; font-weight:900; font-size:30px; line-height:1;">7,200+</div>
-              <div style="margin-top:4px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(244,244,242,0.55);">Facebook</div>
-            </div>
-          </div>
-          <p style="margin:20px 0 0; font-size:14px; line-height:1.65; color:rgba(244,244,242,0.75);">Bayley connects with the “gearhead” demographic: fans who change their own oil and respect the hustle of a driver that does the same on his truck.</p>
-        </div>
-      </div>
+      <div class="career-record" aria-label="NASCAR starts by series"><span><strong>83</strong> Truck Series starts</span><span><strong>111</strong> O’Reilly Auto Parts Series starts</span><span><strong>12</strong> Cup Series starts</span></div>
     </div>
   </section>
 
@@ -307,17 +206,17 @@
           <h3 id="roots-title" class="chapter-heading">01 / Texas roots</h3>
           <article class="milestone">
             <div class="milestone-year">2009–2011</div>
-            <div class="milestone-body"><h4>The Texas foundation</h4><p>Start racing legends cars, won 3 state championships, top 3 in national points all three years</p>
+            <div class="milestone-body"><h4>The Texas foundation</h4><p>Three state championships in Legends cars, with top-three national points finishes in all three seasons.</p>
             <figure><img src="assets/legends.jpg" alt="Legends car victory lane" loading="lazy" decoding="async"></figure></div>
           </article>
 <article class="milestone">
             <div class="milestone-year">2012–2013</div>
-            <div class="milestone-body"><h4>Moving up to modifieds</h4><p>Start racing modifieds, first time racing full-size car, won Central Texas Speedway points championship</p>
+            <div class="milestone-body"><h4>Moving up to modifieds</h4><p>A first full-size race car. A Central Texas Speedway points championship.</p>
             <figure><img src="assets/modified-2012.jpg" alt="Modified victory lane, Houston Motorsports Park" loading="lazy" decoding="async"></figure></div>
           </article>
 <article class="milestone">
             <div class="milestone-year">2014–2017</div>
-            <div class="milestone-body"><h4>Championship years</h4><p>Start racing late models, won viper series championship at South Alabama Speedway, won Central Texas Speedway points championship twice</p>
+            <div class="milestone-body"><h4>Championship years</h4><p>A Viper Series title at South Alabama Speedway and two late-model points championships at Central Texas Speedway.</p>
             <figure><img src="assets/viper-champion.jpg" alt="2014 Viper Series champion, South Alabama Speedway" loading="lazy" decoding="async"></figure></div>
           </article>
         </section>
@@ -325,27 +224,27 @@
           <h3 id="national-title" class="chapter-heading">02 / National stage</h3>
           <article class="milestone">
             <div class="milestone-year">2017</div>
-            <div class="milestone-body"><h4>The NASCAR debut</h4><p>Made first Nascar National series start in the truck series at Martinsville, first truck series top 10 at Phoenix Raceway</p>
+            <div class="milestone-body"><h4>The NASCAR debut</h4><p>First national-series start at Martinsville. First Truck Series top ten at Phoenix.</p>
             <figure><img src="assets/first-nascar-start.jpg" alt="First NASCAR start, Truck Series" loading="lazy" decoding="async"></figure></div>
           </article>
 <article class="milestone">
             <div class="milestone-year">2018</div>
-            <div class="milestone-body"><h4>A new national stage</h4><p>Made first O’Reilly Auto Parts Series start at Texas Motor Speedway, ran a lot of races in trucks and the O’Reilly Auto Parts Series (not a lot happened, gained a lot of experience)</p>
+            <div class="milestone-body"><h4>A new national stage</h4><p>A series debut at Texas Motor Speedway, building experience across two NASCAR divisions.</p>
             <figure><img src="assets/first-xfinity-start.jpg" alt="Chasco No. 8 at Texas Motor Speedway" loading="lazy" decoding="async"></figure></div>
           </article>
 <article class="milestone">
             <div class="milestone-year">2019</div>
-            <div class="milestone-body"><h4>Reaching the Cup Series</h4><p>First Cup series start in march 2019, ran a lot of O’Reilly Auto Parts Series races, ran a few truck races had a 6th place finish at Michigan</p>
+            <div class="milestone-body"><h4>Reaching the Cup Series</h4><p>A Cup Series debut in March and a sixth-place Truck Series finish at Michigan.</p>
             <figure><img src="assets/first-cup-start.jpg" alt="First Cup Series start, No. 52" loading="lazy" decoding="async"></figure></div>
           </article>
 <article class="milestone">
             <div class="milestone-year">2021</div>
-            <div class="milestone-body"><h4>Finding a home</h4><p>Ran all but 4-5 O’Reilly Auto Parts Series races, first series top 10 (7th at Phoenix) ran first races for Johnny Davis Motorsports</p>
+            <div class="milestone-body"><h4>Finding a home</h4><p>Seventh at Phoenix for a first series top ten, and the beginning of a chapter with Johnny Davis Motorsports.</p>
             <figure><img src="assets/xfinity-ksdt.jpg" alt="Ghost No. 4 at Phoenix Raceway" loading="lazy" decoding="async"></figure></div>
           </article>
 <article class="milestone">
             <div class="milestone-year">2022</div>
-            <div class="milestone-body"><h4>A full-season commitment</h4><p>First time ever having a contract and set to run the full schedule</p>
+            <div class="milestone-body"><h4>A full-season commitment</h4><p>A first full-season contract and the opportunity to take on the entire schedule.</p>
             <figure><img src="assets/cota-chasco.jpg" alt="Chasco No. 4 at Circuit of the Americas" loading="lazy" decoding="async"></figure></div>
           </article>
         </section>
@@ -424,7 +323,7 @@
           <div class="partner-body">
             <div class="partner-label">Competition partner</div>
             <h3>TRICON Garage</h3>
-            <p>TRICON Garage is a professional racing organization fielding five full-time NASCAR Craftsman Truck Series entries. Serving as the flagship Truck Series partner of Toyota Racing Development, the team plays an integral role in the NASCAR development ladder. Headquartered in Mooresville, North Carolina, TRICON has quickly established itself as the premier home for cultivating the next generation of motorsports industry professionals.</p>
+            <p>Bayley’s home in the NASCAR Craftsman Truck Series. Based in Mooresville, North Carolina, TRICON develops the next generation of racing talent with Toyota Racing Development.</p>
             <a class="partner-site-link" href="https://tricongarage.com/" target="_blank" rel="noopener">Visit TRICON Garage <span aria-hidden="true">↗</span></a>
           </div>
         </article>
@@ -433,7 +332,7 @@
           <div class="partner-body">
             <div class="partner-label">Featured race partner</div>
             <h3>Monster Truck Wars</h3>
-            <p>Monster Truck Wars performs at Live Family Entertainment of Texas events throughout the United States and Canada, with more than 100 live events annually. Fan-favorite trucks including Shark Attack, T-Rex, Outlaw, Locomotive, and Sheriff deliver family entertainment through racing and freestyle competition.</p>
+            <p>The team behind the No. 5 Shark Attack livery. Monster Truck Wars brings big-truck racing and freestyle entertainment to families across the United States and Canada.</p>
             <a class="partner-site-link" href="https://www.monstertrucks.fun/" target="_blank" rel="noopener">Visit Monster Truck Wars <span aria-hidden="true">↗</span></a>
           </div>
         </article>
@@ -441,23 +340,11 @@
     </div>
   </section>
 
-  <footer style="padding:clamp(40px,5vw,72px) clamp(16px,4vw,56px) 40px;">
-    <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:28px;">
-      <div>
-        <img src="assets/bayley-currey-roof-rail.svg" alt="Bayley Currey" style="display:block; width:min(320px,70vw); height:auto;">
-        <div style="margin-top:18px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(244,244,242,0.45);">© 2026 Bayley Currey Racing &nbsp;/&nbsp; Mooresville, N.C.</div>
-      </div>
-      <div style="display:flex; gap:22px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase;">
-        <a href="merch/" style="color:#f4f4f2">Merch</a>
-        <a href="https://x.com/bayleycurrey" target="_blank" rel="noopener" style="color:#f4f4f2">X</a>
-        <a href="https://www.instagram.com/bayleycurrey05/" target="_blank" rel="noopener" style="color:#f4f4f2">Instagram</a>
-        <a href="https://www.facebook.com/bayleycurrey05" target="_blank" rel="noopener" style="color:#f4f4f2">Facebook</a>
-        <a href="https://tiktok.com/@bayleycurrey" target="_blank" rel="noopener" style="color:#f4f4f2">TikTok</a>
-      </div>
-    </div>
+    <section class="home-section" aria-labelledby="partner-cta-title"><div class="home-wrap home-sponsor-banner"><div><p class="home-eyebrow">Your brand. On this journey.</p><h3 id="partner-cta-title">Be part of what’s next.</h3><p>Explore a partnership with Bayley Currey Racing.</p></div><a class="home-button home-button-red" href="sponsorship.html">Explore sponsorship <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="home-footer">
+    <div class="home-wrap"><div><a href="#top"><img src="assets/bayley-currey-roof-rail.svg" width="240" height="50" alt="Bayley Currey Racing home"></a><p>© 2026 Bayley Currey Racing / Mooresville, N.C.</p></div><nav aria-label="Footer navigation"><a href="merch/">Merch</a><a href="sponsorship.html">Sponsorship</a><a href="https://x.com/bayleycurrey" target="_blank" rel="noopener">X</a><a href="https://www.instagram.com/bayleycurrey05/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/bayleycurrey05" target="_blank" rel="noopener">Facebook</a><a href="https://tiktok.com/@bayleycurrey" target="_blank" rel="noopener">TikTok</a></nav></div>
   </footer>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280}}"></script>
 </body>
 </html>
