@@ -1,0 +1,64 @@
+:root{color-scheme:dark;--ink:#08080a;--paper:#f3f3f0;--red:#ff2430;--muted:#aaaab3;--line:#ffffff20;font-family:'Rajdhani',sans-serif;color:var(--paper);background:var(--ink);font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0;min-width:280px;min-height:100svh;background:radial-gradient(ellipse at 50% 0,#43121955,transparent 520px),repeating-linear-gradient(125deg,transparent 0 100px,#ffffff02 100px 101px);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+a:focus-visible{outline:3px solid #ff6971;outline-offset:5px}
+::selection{background:#bd1721;color:white}
+svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.icon-library{position:absolute;width:0;height:0;overflow:hidden}
+.skip-link{position:fixed;top:12px;left:12px;z-index:10;padding:12px 20px;background:var(--paper);color:var(--ink);transform:translateY(-160%)}
+.skip-link:focus{transform:none}
+.link-page{width:min(100% - 40px,520px);margin:0 auto;padding:28px 0 30px}
+.profile{text-align:center}
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:32px}
+.masthead>a{display:flex;align-items:center;min-height:44px}
+.masthead img{display:block;width:145px;height:auto}
+.official{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}
+.official>span{width:5px;height:5px;background:var(--red);border-radius:50%}
+.portrait-wrap{position:relative;width:112px;margin:0 auto 22px}
+.portrait{display:block;width:112px;height:112px;object-fit:cover;border-radius:50%;border:3px solid var(--ink);outline:1px solid #ffffff40}
+.portrait-badge{position:absolute;right:-10px;bottom:-5px;display:grid;place-items:center;width:44px;height:44px;background:var(--ink);border:1px solid var(--line);border-radius:50%;padding:5px}
+.portrait-badge img{width:100%;height:auto}
+.eyebrow{margin:0 0 6px;color:#ff747c;font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
+h1{margin:0;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:700;font-size:clamp(40px,10vw,50px);line-height:1.05;text-transform:uppercase;letter-spacing:.015em}
+h1>span{color:var(--red)}
+.bio{margin:10px 0 15px;color:#c3c3ca;font-size:17px;font-weight:500}
+.social-links{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px 0 28px}
+.social-links a{display:grid;place-items:center;flex:0 0 60px;width:60px;height:60px;border:1px solid #ffffff30;border-radius:8px;background:#151518;color:var(--paper);transition:background .18s,border-color .18s,transform .18s}
+.social-links svg{width:28px;height:28px;color:inherit;stroke-width:1.9}
+.link-stack{display:grid;gap:11px;scroll-margin-top:20px}
+.link-card{display:flex;align-items:center;gap:17px;min-height:85px;padding:17px 20px;border:1px solid #ffffff24;border-radius:8px;background:#151518;transition:transform .18s,border-color .18s,background .18s}
+.link-icon{display:grid;place-items:center;flex:none;width:34px;color:#d0d0d6}
+.link-copy{display:flex;flex:1;flex-direction:column;min-width:0;gap:3px}
+.link-copy strong{font-size:20px;line-height:1.15;font-weight:700}
+.link-copy>span:not(.card-kicker){color:var(--muted);font-size:14px;line-height:1.35;font-weight:500}
+.card-arrow{width:20px;height:20px;margin-left:auto;color:#888890;transition:transform .18s}
+.merch-card{position:relative;min-height:85px;padding:20px;gap:17px;background:var(--paper);border-color:var(--paper);color:var(--ink);overflow:hidden}
+
+
+.merch-card .link-copy{gap:5px}
+.merch-card .link-copy>span:not(.card-kicker){color:#5b5b63}
+.merch-card .link-copy strong{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:26px;text-transform:uppercase}
+.card-kicker{font-size:10px;line-height:1.4;letter-spacing:.13em;font-weight:700;text-transform:uppercase;color:#b41d27}
+.merch-card .card-arrow{color:var(--red)}
+footer{text-align:center;padding-top:28px}
+.finish-line{display:block;width:40px;height:10px;margin:0 auto 15px;background:repeating-conic-gradient(#ffffff45 0% 25%,transparent 0% 50%) 0 0/10px 10px}
+footer p{margin:0 0 7px;font-size:15px;color:#c3c3ca}
+footer>a{display:inline-flex;align-items:center;min-height:44px;font-size:12px;font-weight:600;letter-spacing:.05em}
+footer small{display:block;margin-top:7px;font-size:10px;color:#868690;letter-spacing:.045em}
+@media(hover:hover){.social-links a:hover{background:#252529;border-color:#ff6971;transform:translateY(-2px)}.link-card:hover{transform:translateY(-2px);border-color:#ff6971;background:#202024}.link-card:hover .card-arrow{transform:translateX(3px);color:#ff6971}.merch-card:hover{background:white}.merch-card:hover .card-arrow{color:#b41d27}footer a:hover{color:#ff747c}}
+@media(min-width:700px){.link-page{padding-top:34px}.masthead{margin-bottom:36px}}
+@media(max-width:370px){.link-page{width:calc(100% - 28px)}.masthead img{width:125px}.official{font-size:10px}.link-card{padding:16px 14px;gap:11px}.link-copy strong{font-size:18px}.link-copy>span:not(.card-kicker){font-size:13px}.merch-card{padding:18px 16px;gap:14px}.merch-card .link-copy strong{font-size:23px}.social-links{gap:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important}}
+.product-showcase{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:2px 0 14px}
+.product{min-width:0;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:7px;overflow:hidden;background:#151518;transition:transform .18s,border-color .18s}
+.product-image{display:block;aspect-ratio:1;background:var(--paper);overflow:hidden}
+.product-image img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .25s}
+.product-title{display:flex;align-items:center;justify-content:space-between;gap:4px;padding:12px 10px 0;font-size:14px;line-height:1.2;font-weight:700}
+.product-title svg{width:14px;height:14px;color:#ff747c}
+.product-action{padding:6px 10px 12px;color:var(--muted);font-size:12px;font-weight:500}
+@media(hover:hover){.product:hover{transform:translateY(-2px);border-color:#ff6971}.product:hover img{transform:scale(1.05)}}
+@media(max-width:400px){.product-showcase{gap:7px}.product-title{font-size:12px;padding:10px 7px 0}.product-title svg{display:none}.product-action{padding:5px 7px 10px;font-size:11px}}
+
+
+.merch-cart{width:30px;height:30px;flex:none;stroke-width:1.7}

@@ -2,11 +2,18 @@
   const grid = document.querySelector('[data-gallery-grid]');
   const button = document.querySelector('[data-gallery-more]');
   const status = document.querySelector('[data-gallery-status]');
-  if (!grid || !button || !status) return;
+  const toggle = document.querySelector('[data-gallery-toggle]');
+  const panel = document.querySelector('[data-gallery-panel]');
+  const scrollport = document.querySelector('[data-gallery-scrollport]');
+  const hint = document.querySelector('[data-gallery-hint]');
+  if (!grid || !button || !status || !toggle || !panel || !scrollport || !hint) return;
+  const previewCount = 8;
+  let savedScroll = 0;
+  let expanded = false;
   const dialog = document.createElement('dialog');
   dialog.className = 'gallery-lightbox';
   dialog.setAttribute('aria-label', 'Enlarged gallery photo');
-  dialog.innerHTML = '<div class="gallery-lightbox-frame"><button class="gallery-lightbox-close" type="button" aria-label="Close photo" title="Close photo" autofocus><span aria-hidden="true">+</span></button><img alt=""><p></p></div>';
+  dialog.innerHTML = '<div class="gallery-lightbox-frame"><button class="gallery-lightbox-close" type="button" aria-label="Close photo" title="Close photo" autofocus><span aria-hidden="true">×</span></button><img alt=""><p></p></div>';
   document.body.append(dialog);
   const fullImage = dialog.querySelector('img');
   let opener;
@@ -44,17 +51,55 @@
     opener?.focus({ preventScroll: true });
   });
   let photos, pending = false;
-  button.hidden = false;
-  button.addEventListener('click', async () => {
+  toggle.hidden = false;
+  function renderGallery() {
+    [...grid.children].forEach((figure, index) => { figure.hidden = !expanded && index >= previewCount; });
+    panel.classList.toggle('is-expanded', expanded);
+    hint.hidden = !expanded;
+    toggle.setAttribute('aria-expanded', String(expanded));
+    const total = photos?.length || Number(button.dataset.total);
+    toggle.querySelector('[data-gallery-toggle-label]').textContent = expanded ? 'Collapse gallery' : `Browse all ${total} photos`;
+    const shown = expanded ? grid.children.length : previewCount;
+    status.textContent = `${shown} of ${total} photos`;
+    button.hidden = !expanded || shown >= total;
+    if (expanded) {
+      scrollport.tabIndex = 0;
+      scrollport.setAttribute('role', 'region');
+      scrollport.setAttribute('aria-label', 'Scrollable racing photo archive');
+      scrollport.setAttribute('aria-describedby', 'gallery-browse-hint');
+    } else {
+      scrollport.removeAttribute('tabindex');
+      scrollport.removeAttribute('role');
+      scrollport.removeAttribute('aria-label');
+      scrollport.removeAttribute('aria-describedby');
+    }
+  }
+  toggle.addEventListener('click', async () => {
+    if (expanded) {
+      savedScroll = scrollport.scrollTop;
+      expanded = false;
+      renderGallery();
+      toggle.focus({ preventScroll:true });
+      panel.scrollIntoView({ block:'nearest', behavior:'instant' });
+    } else {
+      expanded = true;
+      renderGallery();
+      scrollport.scrollTop = savedScroll;
+      panel.scrollIntoView({ block:'nearest', behavior:'instant' });
+      scrollport.focus({ preventScroll:true });
+      if (!photos) await loadMore();
+    }
+  });
+  async function loadMore() {
     if (pending) return;
     pending = true;
     button.disabled = true;
+    grid.setAttribute('aria-busy', 'true');
     button.textContent = 'Loading photos...';
     try {
-      photos ||= (await import('./gallery-data.js?v=2')).default;
+      photos ||= (await import('./gallery-data.js?v=3')).default;
       const offset = grid.children.length;
       const fragment = document.createDocumentFragment();
-      let first;
       for (const photo of photos.slice(offset, offset + 12)) {
         const figure = document.createElement('figure');
         const image = document.createElement('img');
@@ -70,21 +115,20 @@
         image.decoding = 'async';
         caption.textContent = photo.caption;
         figure.append(image, caption);
-        first ||= figure;
         fragment.append(figure);
       }
       grid.append(fragment);
       enhancePhotos();
-      const shown = grid.children.length;
-      status.textContent = `Showing ${shown} of ${photos.length} photos`;
-      button.hidden = shown >= photos.length;
-      if (first) { first.tabIndex = -1; first.focus({ preventScroll: true }); }
+      renderGallery();
     } catch {
       status.textContent = 'The photos could not load. Please try again.';
     } finally {
       pending = false;
       button.disabled = false;
+      grid.removeAttribute('aria-busy');
       button.textContent = 'Load more photos';
     }
-  });
+  }
+  button.addEventListener('click', () => loadMore());
+  renderGallery();
 })();

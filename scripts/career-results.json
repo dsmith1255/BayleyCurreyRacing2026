@@ -1,0 +1,97 @@
+{
+  "through": "2026-09-17",
+  "scope": "Every NASCAR national-series top-ten finish; top fives are included, not additional finishes.",
+  "results": [
+    {
+      "track": "Atlanta",
+      "year": 2023,
+      "series": "Trucks",
+      "finish": 4,
+      "source": "https://www.nascar.com/results/racecenter/2023/nascar-craftsman-truck-series/fr8-208/stn/recap/"
+    },
+    {
+      "track": "Atlanta",
+      "year": 2025,
+      "series": "Trucks",
+      "finish": 4,
+      "source": "https://www.driveraverages.com/nascar_truckseries/driveryear.php?drv_id=4171&yr_id=2025"
+    },
+    {
+      "track": "Bristol Motor Speedway",
+      "year": 2026,
+      "series": "Trucks",
+      "finish": 2,
+      "source": "https://www.nascar.com/live-results/nascar-craftsman-truck-series/2026-unoh-250/"
+    },
+    {
+      "track": "Homestead-Miami",
+      "year": 2023,
+      "series": "Trucks",
+      "finish": 5,
+      "source": "https://www.jayski.com/wp-content/uploads/sites/31/2023/10/21/CTS_Home_Results.pdf"
+    },
+    {
+      "track": "Kansas",
+      "year": 2024,
+      "series": "Trucks",
+      "finish": 8,
+      "source": "https://www.driveraverages.com/nascar_truckseries/driveryear.php?drv_id=4171&yr_id=2024"
+    },
+    {
+      "track": "Michigan",
+      "year": 2019,
+      "series": "Trucks",
+      "finish": 6,
+      "source": "https://www.nascar.com/news-media/2019/08/11/bayley-currey-finishes-sixth-at-michigan-international-speedway/"
+    },
+    {
+      "track": "Milwaukee Mile",
+      "year": 2023,
+      "series": "Trucks",
+      "finish": 10,
+      "source": "https://www.jayski.com/race-results/2023-nascar-craftsman-truck-series/clean-harbors-175/"
+    },
+    {
+      "track": "Nashville",
+      "year": 2023,
+      "series": "Trucks",
+      "finish": 5,
+      "source": "https://www.nascar.com/news-media/2023/06/23/nascar-craftsman-truck-series-bayley-currey-2023-nashville/"
+    },
+    {
+      "track": "Nashville",
+      "year": 2025,
+      "series": "Trucks",
+      "finish": 9,
+      "source": "https://www.driveraverages.com/nascar_truckseries/driveryear.php?drv_id=4171&yr_id=2025"
+    },
+    {
+      "track": "New Hampshire",
+      "year": 2022,
+      "series": "Xfinity",
+      "finish": 10,
+      "source": "https://www.jayski.com/wp-content/uploads/sites/31/2022/7/16/18-nxs-2022-results-final.pdf"
+    },
+    {
+      "track": "Phoenix",
+      "year": 2017,
+      "series": "Trucks",
+      "finish": 10,
+      "source": "https://www.driveraverages.com/nascar_truckseries/driveryear.php?drv_id=4171&yr_id=2017"
+    },
+    {
+      "track": "Phoenix",
+      "year": 2021,
+      "series": "Xfinity",
+      "finish": 7,
+      "source": "https://www.driveraverages.com/nascar_secondseries/drivertrack.php?drv_id=4171&trk_id=17"
+    },
+    {
+      "track": "Texas",
+      "year": 2025,
+      "series": "Trucks",
+      "finish": 8,
+      "source": "https://www.driveraverages.com/nascar_truckseries/driveryear.php?drv_id=4171&yr_id=2025"
+    }
+  ]
+}

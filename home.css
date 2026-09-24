@@ -93,6 +93,34 @@ body.home-page { margin:0; background:var(--home-ink); color:var(--home-paper); 
 .about-roles strong { display:block; font:700 1.4rem/1.1 'Saira Condensed',sans-serif; }
 .text-link { display:inline-flex; align-items:center; gap:20px; min-height:48px; border-bottom:1px solid #ff2430; font-size:.875rem; font-weight:600; }
 .home-news-layout { display:grid; grid-template-columns:.7fr 1.3fr; gap:40px; align-items:start; }
+.race-recap { scroll-margin-top:calc(var(--header-height) + 24px); border-top:3px solid var(--home-red); padding-top:24px; }
+.race-recap-feature { display:grid; grid-template-columns:1.15fr 1fr; gap:clamp(24px,4vw,48px); align-items:center; }
+.race-recap-photo,.race-recap-gallery figure { margin:0; min-width:0; }
+.race-recap-photo a,.race-recap-gallery a { display:block; }
+.race-recap-photo img,.race-recap-gallery img { display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; }
+.race-recap figcaption { margin-top:10px; color:var(--home-muted); font-size:.875rem; line-height:1.4; }
+.home-page .race-recap-copy h3 { margin:0 0 20px; font:700 clamp(2.25rem,4.5vw,4rem)/.98 var(--type-display); text-transform:uppercase; }
+.race-recap-copy > p:not(.home-eyebrow) { color:#c3c3cb; font-size:1.125rem; line-height:1.6; }
+.race-recap-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin:24px 0 0; border-block:1px solid var(--home-line); }
+.race-recap-stats > div { display:flex; flex-direction:column; gap:6px; padding:16px 10px; border-right:1px solid var(--home-line); }
+.race-recap-stats > div:first-child { padding-left:0; }
+.race-recap-stats > div:last-child { border-right:0; }
+.race-recap-stats dt { color:var(--home-muted); font-size:.875rem; line-height:1.2; }
+.race-recap-stats dd { order:-1; margin:0; color:#fff; font:700 2.5rem/1 'Barlow Condensed',sans-serif; }
+.race-recap-stats > div:first-child dd { color:var(--home-red); }
+.race-recap-details { margin-top:24px; border-top:0; }
+.race-recap-details .release-body { max-width:76ch; padding-bottom:12px; }
+.race-recap-details .release-body p { margin:0 0 16px; }
+.race-recap-sources { font-size:.9375rem; }
+.race-recap-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; padding-bottom:28px; }
+.news-archive-label { margin:44px 0 24px; }
+@media(max-width:700px) {
+  .race-recap-feature { grid-template-columns:1fr; gap:22px; }
+  .race-recap-photo img { aspect-ratio:16/9; max-height:260px; object-position:50% 65%; }
+  .race-recap-gallery { grid-template-columns:1fr; gap:22px; }
+  .race-recap-gallery img { aspect-ratio:16/9; max-height:240px; }
+  .race-recap-gallery figure:last-child img { object-position:center 60%; }
+}
 .news-image { margin:0; }
 .news-image img { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; }
 .news-image figcaption { padding-top:12px; color:#b4b4bd; font-size:.8125rem; }
@@ -280,3 +308,11 @@ body.home-page { margin:0; background:var(--home-ink); color:var(--home-paper); 
   .gallery-controls { align-items:stretch; flex-direction:column; gap:12px; }
   .gallery-controls button { justify-content:center; }
 }
+
+/* Bristol career highlight pairs the verified result with the race photograph. */
+.home-page :is(.career-card-bristol,.career-card-team) { grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; gap:clamp(22px,3vw,40px); align-items:center; }
+.career-bristol-copy,.career-team-copy { min-width:0; }
+.career-bristol-photo,.career-team-photo { margin:0; min-width:0; }
+.career-bristol-photo img,.career-team-photo img { display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; }
+.career-bristol-copy .text-link { margin-top:14px; }
+@media(max-width:700px) { .home-page :is(.career-card-bristol,.career-card-team) { grid-template-columns:1fr; } }

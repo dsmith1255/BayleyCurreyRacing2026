@@ -8,8 +8,7 @@ const code = [];
 async function collect(directory = '') {
   for (const entry of await readdir(resolve(root, directory), { withFileTypes: true })) {
     const name = directory ? `${directory}/${entry.name}` : entry.name;
-    if (entry.isDirectory() && name === 'merch') await collect(name);
-    else if (entry.isDirectory() && directory.startsWith('merch')) await collect(name);
+    if (entry.isDirectory() && ['merch', 'links'].includes(name.split('/')[0])) await collect(name);
     else if (entry.isFile() && (/\.(html|css|js)$/.test(name) || name === 'shopify-storefront.mjs' || name === '.nojekyll')) code.push(name);
   }
 }

@@ -3,7 +3,7 @@ import { readFile, access, readdir, stat } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { pathToFileURL } from 'node:url';
 const root = resolve(import.meta.dirname, '../dist');
-const pages = ['index.html', 'sponsorship.html', 'policies.html', 'merch/index.html', 'merch/tee/index.html', 'merch/hoodie/index.html', 'merch/hat/index.html'];
+const pages = ['index.html', 'links/index.html', 'sponsorship.html', 'policies.html', 'merch/index.html', 'merch/tee/index.html', 'merch/hoodie/index.html', 'merch/hat/index.html'];
 let checked = 0;
 for (const page of pages) {
   const html = await readFile(resolve(root, page), 'utf8');
@@ -33,7 +33,7 @@ for (const photo of archive) {
   assert.ok(photo.caption && photo.variants.length);
   for (const variant of photo.variants) {
     assert.ok(variant.width > 0 && variant.height > 0);
-    assert.match(variant.src, /^\/assets\/optimized\/archive-[a-f0-9]+-\d+\.webp$/);
+    assert.match(variant.src, /^\/assets\/optimized\/(?:archive-[a-f0-9]+-\d+|bristol-p2-2026-(?:racing|celebration|portrait|night-run)-(?:480|960))\.webp$/);
     await access(resolve(root, '.' + variant.src));
     checked++;
   }
