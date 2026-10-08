@@ -22,6 +22,8 @@ async function copyPublic(name) {
   await cp(resolve(root, name), resolve(output, name));
 }
 for (const name of code) await copyPublic(name);
+// Publish the v2 design at the main URL while retaining /v2/ for existing links.
+await cp(resolve(root, 'v2/index.html'), resolve(output, 'index.html'));
 async function copyReferencedMedia(directory = '') {
   for (const entry of await readdir(resolve(root, directory), { withFileTypes: true })) {
     const name = directory ? `${directory}/${entry.name}` : entry.name;

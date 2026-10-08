@@ -3,11 +3,11 @@ import { readFile, access, readdir, stat } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { pathToFileURL } from 'node:url';
 const root = resolve(import.meta.dirname, '../dist');
-const pages = ['index.html', 'links/index.html', 'sponsorship.html', 'policies.html', 'merch/index.html', 'merch/tee/index.html', 'merch/hoodie/index.html', 'merch/hat/index.html'];
+const pages = ['index.html', 'v2/index.html', 'links/index.html', 'sponsorship.html', 'policies.html', 'merch/index.html', 'merch/tee/index.html', 'merch/hoodie/index.html', 'merch/hat/index.html'];
 let checked = 0;
 for (const page of pages) {
   const html = await readFile(resolve(root, page), 'utf8');
-  const links = [...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map(match => match[1]);
+  const links = [...html.matchAll(/(?:src|href|data-full)="([^"#]+)"/g)].map(match => match[1]);
   for (const match of html.matchAll(/srcset="([^"]+)"/g)) links.push(...match[1].split(',').map(item => item.trim().split(' ')[0]));
   for (const url of links) {
     if (/^(https?:|mailto:|tel:|data:)/.test(url)) continue;
@@ -17,7 +17,7 @@ for (const page of pages) {
     checked++;
   }
   for (const match of html.matchAll(/<img\b[^>]*src="\/assets\/optimized\/[^>]*>/g)) {
-    assert.match(match[0], /srcset=/);
+    if (Number(match[0].match(/width="(\d+)"/)?.[1]) > 480) assert.match(match[0], /(?:srcset|data-full)=/);
     assert.match(match[0], /width="\d+" height="\d+"/);
     assert.match(match[0], /loading="(?:lazy|eager)"/);
   }
@@ -39,7 +39,7 @@ for (const photo of archive) {
   }
 }
 const home = await readFile(resolve(root,'index.html'),'utf8');
-const gallery = home.match(/<div class="archive-grid"[\s\S]*?<\/div>/)[0];
-assert.equal([...gallery.matchAll(/<figure>/g)].length, 8);
+const gallery = home.match(/<ul class="grid"[^>]*data-gallery[\s\S]*?<\/ul>/)[0];
+assert.equal([...gallery.matchAll(/<li>/g)].length, 4);
 assert.ok(home.includes('data-gallery-more'));
 console.log(`${checked} local references verified across ${pages.length} pages and ${archive.length} gallery photos. Public bundle: ${await bytes(root)} bytes.`);

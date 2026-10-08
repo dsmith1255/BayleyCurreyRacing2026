@@ -23,7 +23,7 @@ function onScroll() {
 addEventListener('scroll', onScroll, { passive: true });
 
 /* ---------- Active section in the desktop nav ---------- */
-const navLinks = [...document.querySelectorAll('.bar-links a')];
+const navLinks = [...document.querySelectorAll('.bar-links a[href^="#"]')];
 const sectionFor = new Map(navLinks.map(a => [document.querySelector(a.hash), a]));
 const navObserver = new IntersectionObserver(entries => {
   for (const entry of entries) {
