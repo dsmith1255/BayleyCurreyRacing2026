@@ -400,7 +400,7 @@ button, summary, .btn, .chips, .card-tag, .label { -webkit-user-select: none; us
 .tracks-head p:last-child { color: #cfcfd6; }
 .tracks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
 @media (min-width: 600px) { .tracks { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; } }
-@media (min-width: 900px) { .tracks { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (min-width: 900px) { .tracks { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .tracks li { display: grid; align-content: start; gap: 10px; padding: clamp(12px, 2vw, 16px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--ink-2); }
 .tracks svg { width: 100%; aspect-ratio: 2; }
 .tracks path {
@@ -581,3 +581,6 @@ html.locked, html.locked body { overflow: hidden; }
   .sheet, .sheet[data-open="true"] { transition: transform 1ms, visibility 1ms; }
   .fold::details-content { transition: none; }
 }
+
+.season-status { padding-top:16px; border-top:1px solid var(--line); scroll-margin-top:calc(var(--bar-h) + 24px); }
+.season-status strong { display:block; color:var(--paper); }

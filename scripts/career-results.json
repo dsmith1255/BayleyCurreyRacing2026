@@ -1,5 +1,5 @@
 {
-  "through": "2026-09-17",
+  "through": "2026-10-09",
   "scope": "Every NASCAR national-series top-ten finish; top fives are included, not additional finishes.",
   "results": [
     {
@@ -22,6 +22,14 @@
       "series": "Trucks",
       "finish": 2,
       "source": "https://www.nascar.com/live-results/nascar-craftsman-truck-series/2026-unoh-250/"
+    },
+    {
+      "track": "Charlotte Motor Speedway",
+      "year": 2026,
+      "series": "Trucks",
+      "finish": 4,
+      "source": "/#season-recap",
+      "sourceNote": "Result supplied by the site owner on October 10, 2026."
     },
     {
       "track": "Homestead-Miami",
